@@ -1,0 +1,119 @@
+Day 1 of RWD 07/10/2020, Wed.   10 - 1
+=====================================================
+/*desktops first*/
+body{
+    background-color: red;
+}
+/* for mobile devices*/
+@media only screen and (min-width:0px) and (max-width:500px) and (orientation:landscape){
+    body{
+        background-color:red;
+    }
+}
+
+@media only screen and (min-width:0px) and (max-width:500px) and (orientation:portrait){
+    body{
+        background-color:aqua;
+    }
+}
+/* for tabs */
+@media only screen and (min-width:501px) and (max-width:700px) and (orientation:landscape){
+    body{
+        background-color:green;
+    }
+}
+
+@media only screen and (min-width:501px) and (max-width:700px) and (orientation:portrait){
+    body{
+        background-color:green;
+    }
+}
+
+/* for laptops */
+@media only screen and (min-width:701px) and (max-width:900px) and (orientation:landscape){
+    body{
+        background-color:hotpink;
+    }
+}
+
+@media only screen and (min-width:701px) and (max-width:900px) and (orientation:portrait){
+    body{
+        background-color:indigo;
+    }
+}
+/* for desktops */
+@media only screen and (min-width:901px) and (max-width:1000px) and (orientation:landscape){
+    body{
+        background-color:lightslategray;
+    }
+}
+
+@media only screen and (min-width:901px) and (max-width:1000px) and (orientation:portrait){
+    body{
+        background-color:olive;
+    }
+}
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=2">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RWD</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <h1>Welcome to RWD Training........</h1>
+</body>
+</html>
+========================================================
+
+//responsive web page for every device we write the code
+========================================================
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=2">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RWD</title>
+    <link rel="stylesheet" media="screen and (min-width:0px) and (max-width:500px)" href="mobile.css">
+    <link rel="stylesheet" media="screen and (min-width:501px) and (max-width:700px)" href="tab.css">
+    <link rel="stylesheet" media="screen and (min-width:701px) and (max-width:900px)" href="laptop.css">
+    <link rel="stylesheet" media="screen and (min-width:901px)" href="laptop.css">
+
+</head>
+<body>
+    <h1>Welcome to RWD Training........</h1>
+</body>
+</html>
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/*mobile.css*/
+body{
+        background-color:red;
+}
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/*tab.css*/
+    body{
+        background-color:green;
+    }
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/*laptop.css*/
+body{
+        background-color:hotpink;
+    }
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/*styles.css*/
+/*desktops first*/
+body{
+    background-color: red;
+}
+========================================================
+
+Day 2 of RWD 08/10/2020, Thur.   10 - 1
+
+=======================================================
+

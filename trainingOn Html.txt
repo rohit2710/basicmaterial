@@ -1,0 +1,779 @@
+cookie
+------------------
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Day 2 html training...</title>
+    </head>
+    <body>
+        <h1>Welcome to day2 </h1>
+        <button onclick="fun1()">set cookie</button>
+        <button onclick="fun2()">get cookie</button>
+        <!-- to get right output, add javascript at the end of page -->
+        <script src="script.js"></script>
+    </body>
+</html>
+
+script.js
+-----------------
+
+
+function fun1(){
+    //set cookie 
+    document.cookie = 'un=dadaram'
+}
+function fun2(){
+    console.log(document.cookie)
+}
+
+
+session storage
+----------------------------
+
+fun f1(){
+sessionStorage.setItem('myname','Akshay garg')
+}
+
+local storage
+---------------
+fun f2()
+{
+localStorage.setItem('address','arya puri')
+}
+
+Get value from Session and local storage
+-----------------------------
+
+console.log('address is:'+ localStorage.getItem('address')
+
+IndexedDB
+---------------------
+
+function fun1() {
+    var db
+    var req = window.indexedDB.open('product')
+    req.onsuccess = function (evt) {
+        console.log('opened database successfully')
+        db = req.result
+    }
+    var emp = [
+        { id: 101, name: "dmjadhav", address: "pune" },
+        { id: 102, name: "dmjadhav1", address: "pune1" }
+    ]
+ 
+    req.onupgradeneeded = (evt) => {
+        var db = event.target.result;
+        var objectStore = db.createObjectStore("product", { keyPath: "id" });
+        for (var i in emp) {
+            objectStore.add(emp[i]);
+        }
+    }
+}
+
+
+Canvas
+------------------------------------------------
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Day 2 html training...</title>
+    </head>
+    <body>
+        <h1>Welcome to day2 </h1>
+        <canvas id="can" width="500" height="500" 
+            style="border: 2px solid red;"
+        >
+ 
+        </canvas>
+        <button onclick="fun1()">create reactangle</button>
+        <!-- to get right output, add javascript at the end of page -->
+        <script src="script.js"></script>
+    </body>
+</html>
+
+script.js
+==================
+function fun1() {
+    //get canvas from html
+   let cv = document.querySelector('#can')
+
+   //create context for drawing pictures
+   let ct = cv.getContext('2d')
+
+   //start drawing
+   ct.beginPath();
+   //set fill color
+
+   ct.fillStyle = 'green';
+   //create reactangle...
+
+   //x position, y position, width, height
+   ct.fillRect(10, 10, 200, 300)    
+}
+
+
+SVG(Scalable vector graphics)
+----------------------------------
+<svg width='400' height='200'>
+
+
+Drag and Drop API
+-----------------------------------
+
+
+Html linter Link
+-------------------------
+https://www.freeformatter.com/html-validator.html
+
+
+CSS----------------------------------------------------------------------
+
+Border
+-===============================================
+d1{
+    border: 2px solid red;
+    /* top right bottom left */
+    margin: 10px;
+    /* top right bottom left */
+    padding: 15px;
+    width: 500px;
+    height: 100px;
+}
+.d2{
+    /* size of element will fix to given height and width */
+    box-sizing: border-box;
+    border: 2px solid red;
+    /* top right bottom left */
+    margin: 10px;
+    /* top right bottom left */
+    padding: 15px;
+    width: 500px;
+    height: 100px;
+}
+
+
+
+
+
+---------------------------------------------
+
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>CSS 3 session I</title>
+</head>
+ 
+<body>
+    <div class="d1">
+        this is div element
+    </div>
+    <div class="d2">
+        this is div element
+    </div>
+    
+    <link rel="stylesheet" href="styles.css">
+</body>
+ 
+</html>
+
+
+Position property
+-------------------------------------------------
+
+
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>CSS 3 session I</title>
+</head>
+ 
+<body>
+    <img src="logo.jpeg" alt="">
+    <a href="home.html">home page</a>
+    <div>this is div</div>
+    <div class="footer">this is footer</div>
+    <img src="menu.jpeg" class="menu" alt="">    
+    <link rel="stylesheet" href="styles.css">
+</body>
+ 
+</html>
+
+
+script.js
+===================================
+.footer{
+    background-color: grey;
+    color: red;
+    width: 100%;
+    position: fixed;
+    /* right, left, top, bottom */
+    top: 100px;
+}
+.menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+
+
+FlexBox
+----------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>CSS 3 session I</title>
+</head>
+ 
+<body>
+    <div class="product-container">
+        <div class="product">
+            <img src="logo.jpeg" alt="">
+            <h1>Computer</h1>
+            <p>price: Rs.35000</p>
+            <button>add to cart</button>
+        </div>
+        <div class="product">
+            <img src="logo.jpeg" alt="">
+            <h1>Computer</h1>
+            <p>price: Rs.35000</p>
+            <button>add to cart</button>
+        </div>
+        <div class="product">
+            <img src="logo.jpeg" alt="">
+            <h1>Computer</h1>
+            <p>price: Rs.35000</p>
+            <button>add to cart</button>
+        </div>
+        
+        <div class="product">
+            <img src="logo.jpeg" alt="">
+            <h1>Computer</h1>
+            <p>price: Rs.35000</p>
+            <button>add to cart</button>
+        </div>
+        <div class="product">
+            <img src="logo.jpeg" alt="">
+            <h1>Computer</h1>
+            <p>price: Rs.35000</p>
+            <button>add to cart</button>
+        </div>
+        <div class="product">
+            <img src="logo.jpeg" alt="">
+            <h1>Computer</h1>
+            <p>price: Rs.35000</p>
+            <button>add to cart</button>
+        </div>
+        <div class="product">
+            <img src="logo.jpeg" alt="">
+            <h1>Computer</h1>
+            <p>price: Rs.35000</p>
+            <button>add to cart</button>
+        </div>
+        <div class="product">
+            <img src="logo.jpeg" alt="">
+            <h1>Computer</h1>
+            <p>price: Rs.35000</p>
+            <button>add to cart</button>
+        </div>
+    </div>
+    <link rel="stylesheet" href="styles.css">
+</body>
+ 
+</html>
+
+script.js
+============================
+
+.product-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.product{
+    height: 250px;
+    width: 250px;
+    border: 1px solid grey;
+    margin: 20px;
+    text-align: center;
+}
+
+============================================================================================================
+
+
+
+navigation bar
+------------------------------------------
+style.css
+
+
+h1{
+    background-color: grey;
+    border: 1px solid red;
+    box-shadow: 10px 20px green;
+}
+div{
+    text-shadow: 2px 2px rgba(255, 0, 0, 0.5);
+    font-family: myfont;
+}
+@font-face {
+    font-family: myfont;
+    src: url(SansationLight.woff)
+}
+header{
+    display: flex;
+}
+nav{
+    flex: 90%;
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid grey;
+}
+a{
+    padding: 10px 15px;
+    font-weight: bold;
+    text-decoration: none;
+    color: darkblue;
+    font-size: 20px;
+}
+
+
+Transition
+==================================
+
+/* after loading page */
+div {
+    background-color: grey;
+    width: 15%;
+    height: 50px;
+}
+/* when we hover mouse on element */
+div:hover{
+    width: 20%;
+    height: 100px;
+    transition: width 2s, height 5s;
+}
+
+  -----------------  
+
+<!DOCTYPEhtml>
+<htmllang="en">
+ 
+<head>
+<metacharset="UTF-8">
+<metaname="viewport"content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+ 
+<body>
+<div>
+        this is div
+</div>
+<linkrel="stylesheet"href="styles1.css">
+</body>
+ 
+</html>
+
+
+Animation
+===========================================
+
+
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ 
+<body>
+    <div>
+        ad section
+        <ul>ad1</ul>
+        <ul>ad1</ul>
+        <ul>ad1</ul>
+        <ul>ad1</ul>
+        <ul>ad1</ul>
+    </div>
+    <link rel="stylesheet" href="styles1.css">
+</body>
+ 
+</html>
+
+style.css
+----------------
+
+/* create animation */
+ 
+@keyframes myanimation{
+    from {background-color: red; color: black}
+    to{background-color: green; color: white}
+}
+div{
+    width: 20%;
+    height: 100%;
+    background-color: grey;
+    /* animation-name: myanimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite; */
+    animation: myanimation 5s infinite;
+}
+
+
+Multiple Columns
+========================================
+p{
+    column-count: 4;
+    line-height: 40px;
+    word-spacing: 5px;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    column-gap: 50px;
+    column-rule: 5px dotted red;
+}
+
+
+Media query
+=====================================
+
+
+/* large desktop */
+body{
+    background-color: red;
+}
+h2{
+    display: none;
+}
+/* printer */
+@media only print {
+    h2{
+        display: block;
+    }
+    body{
+        background-color: lightblue;
+    }
+}
+/* mobile --- portrait --> default */
+@media only screen and (min-width: 0px) and (max-width: 600px) and (orientation: portrait ){
+    body{
+        background-color: green;
+    }
+}
+/* mobile --- landscape --> if height is less than width */
+@media only screen and (min-width: 0px) and (max-width: 600px) and (orientation: landscape ){
+    body{
+        background-color: black;
+    }
+}
+/* tab */
+@media only screen and (min-width: 601px) and (max-width: 800px){
+    body{
+        background-color: blue;
+    }
+}
+/* laptop */
+@media only screen and (min-width: 801px) and (max-width: 1000px){
+    body{
+        background-color: yellow;
+    }
+}
+
+
+index.html
+--------------------
+    
+
+<!DOCTYPEhtml>
+<htmllang="en">
+ 
+<head>
+<metacharset="UTF-8">
+<metaname="viewport"content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+ 
+<body>
+<h2>this page is getting printed...</h2>
+<h1>this is media query page...</h1>
+<linkrel="stylesheet"href="styles1.css">
+</body>
+ 
+</html>
+
+                                                          JAVASCRIPT
+===========================================================================================================
+
+Function & Event
+-----------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- script will be executed only after loading page -->
+    <script defer src="script.js">       </script>
+</head>
+<body>
+    <h1>welcome to javascript training...</h1>
+    <button onclick="fun3()">click</button>
+</body>
+</html>
+
+
+
+-------------
+//definition + declaration 
+function fun1(a,b){
+    console.log('this is just a function...' + (a+b))
+}
+//calling 
+fun1(10, 20)
+ 
+//create function using arrow operator  => 
+//1. simple syntax
+//2. it will solve binding of this keyword
+var fun2 = (x , y)=>{
+    console.log('this is arrow function' + (x+y))
+}
+fun2(40,50)
+ 
+function fun3(){
+    console.log('this is function 3')
+}
+
+
+Output
+==========================================
+
+[4:15 PM] Dadaram Manohar Jadhav (Guest)
+    
+
+///this function will handle event
+function fun3(){
+// console.log('this is function 3')
+ 
+// window.alert('hi')
+// alert('hi')
+ 
+// var ans = confirm('Do you want to continue? ')
+// console.log(ans)
+ 
+// document.write('this is document.write..... it will remove dom')
+
+    document.querySelector('#mypara').innerHTML = 'mouse over done...'
+
+}
+
+
+
+<!DOCTYPEhtml>
+<htmllang="en">
+<head>
+<metacharset="UTF-8">
+<metaname="viewport"content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<!-- script will be executed only after loading page -->
+<scriptdefersrc="script.js"></script>
+</head>
+<body>
+<h1>welcome to javascript training...</h1>
+<pid="mypara"></p>
+<!-- event will be triggered by button (by hovering mouse) -->
+<buttononmouseover="fun3()">click</button>
+</body>
+</html>
+
+
+variable
+===============================================================
+
+
+    
+
+var address = 'katraj, pune'
+function fun1(){
+var nm = 'dadaram jadhav'//string
+    console.log(typeof nm)
+var mobile = 90111//number (64 bit)
+    console.log(typeof mobile)
+var per = 65.65//number (64 bit)
+    console.log(typeof per)
+var isWorking = true//boolean
+    console.log(typeof isWorking)
+var isWorking = 'yes working'//string
+    console.log(typeof isWorking)
+/////////////////////
+//if don't add var keyword then variable will be automatically global
+    address = 'pune'
+    console.log('address is : '+ address)
+}
+function fun2(){
+// console.log('name is : '+ nm)
+    console.log('address is : '+ address)
+}
+
+
+Array
+=====================================================
+
+
+ 
+function fun1(){
+    var score = [54, 23, 365, 34, 234, 123, 9875, 234]
+    console.log(score)
+    // simple loop
+    // for...in --> used to retrieve object
+    // for.... of loop 
+    for(var i of score){
+        console.log(i)
+    }
+    console.log('value greater than 300')
+    var greater300 = score.filter((x)=> x > 300)
+    console.log(score)
+    console.log(greater300)
+    //sorting
+    console.log('sorting...')
+    score.sort((x,y)=> y-x )         //x-y==> positive , negative , 0 
+   
+    console.log(score)
+ 
+    var sq = score.map((n)=> n*n)
+    console.log('square of array')
+    console.log(sq)
+ 
+    console.log('printing')
+    score.forEach((p)=>{
+        console.log(p)
+    })
+ 
+}
+
+
+index.html
+===============
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- script will be executed only after loading page -->
+    <script defer src="script.js">       </script>
+</head>
+<body>
+ 
+    <button onclick="fun1()">click</button>
+    <button onclick="fun2()">click</button>
+</body>
+</html>
+
+
+
+++++++++++AJAX 05/10/2020
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="ajax.css">
+    <script defer src="ajaxscript.js"></script>
+
+</head>
+<body>
+    <button onclick="load()">load data from REST API</button>    
+    <button onclick="send()">Send data to server</button>
+    <hr>
+    <div class="container">        
+    </div>
+</body>
+</html>
+==========================
+.container{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+text-align: center;
+}
+
+.product{
+border: 1px solid grey;
+width: 300px;
+height: 300px;
+margin: 10px;
+}
+==========================
+
+//get data from rest api
+function load(){
+    let xhttp = new XMLHttpRequest();
+    ///method, url, asynchronous/synchronous
+    xhttp.open('GET', 'https://jsonplaceholder.typicode.com/posts', true)
+    xhttp.send()
+ 
+    //function will be executed in future on the occurance of event(onreadystatechange)
+    //callback function
+    xhttp.onreadystatechange = function(){
+        //200 --> request is successful, readyState --> we are ready to fetch data
+        //data will come in responseText 
+        if(this.status == 200 && this.readyState){
+            console.log(this.responseText)
+            let res = []
+            res = JSON.parse(this.responseText)
+            let product = ''
+            res.forEach( p => {
+                product +=
+                `
+                <div class="product">
+                <p> ${p.title.substring(0,20)} </p> 
+                <p> ${p.body.substring(0,30)} </p> 
+                <h2>Rs.${p.id}</h2>
+                <button>add to cart</button>
+                </div>
+                `
+            });
+            document.querySelector('.container').innerHTML = product
+            ///process this data and present on ui
+        }
+    }
+}
+//post (send) data to server
+function send(){
+ 
+}
+==========================
+function fun1() {
+      console.log('processing')
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 201) {
+          console.log(this.responseText)
+        }
+      };
+      var data = {
+        id: 1012,
+        title: 'post by dadaram',
+        body: 'this is post req',
+       
+      };
+      xhttp.open("POST", "https://jsonplaceholder.typicode.com/posts", true);
+      xhttp.setRequestHeader("Content-Type", "application/json");
+      xhttp.send(JSON.stringify(data));
+    }
+===========================
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
++++++++++++++++++++++++++++
+

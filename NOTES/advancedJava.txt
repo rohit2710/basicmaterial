@@ -1,0 +1,610 @@
+==================================================================
+Day1      04/11/20
+==================================================================
+jsp
+servlet
+junit
+log4j
+database
+
+ 
+
+it will happen in group
+
+ 
+
+same group will continue
+
+ 
+
+same lead will continue
+
+ 
+
+two problem statement
+
+ 
+
+1. problem statement --> g1-g5 --> deccan sport club
+
+ 
+
+2. problem statement --> g6 -g9 --> grievence management system
+
+ 
+
+ 
+
+detail project document(SRS)
+registration
+login
+complain (category, detail, remark, screenshot)
+remainder(search) --> display complain details, remainder
+department head --> view complain --> table format
+technology
+software requirement
+
+ 
+
+
+validate requirement --> me , mentors
+
+ 
+
+after validation can start working on project
+divide task
+gui
+backend (manager, admin, customer)
+database
+testing, junit test
+git 
+sonarqube
+
+ 
+
+SDLC 
+--> project come to orgninzation(VP)
+--> for project we assign project manager
+--> requirement gathering(vp, pm will setup meeting with client , team meeting) --> SRS
+--> analysis
+--> coding
+--> testing (to check functionality, will write unit test case)
+--> deploy (commit  code on github, will pull code from github and start application)
+--> maintainance
+
+
+
+[4:47 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+public class First extends HttpServlet {​​​​​​​
+    private static final long serialVersionUID = 1L;
+
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {​​​​​​​
+        response.getWriter().append("Served at: ").append(request.getContextPath());
+    }​​​​​​​
+}​​​​​​​
+
+
+
+
+
+​[5:02 PM] Dadaram Manohar Jadhav (Guest)
+    
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+
+<web-app>
+  <servlet>
+      <servlet-name>First</servlet-name>
+      <servlet-class>com.cybage.First</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>First</servlet-name>
+      <url-pattern>/First</url-pattern>
+  </servlet-mapping>
+</web-app>
+ 
+
+
+
+​[5:03 PM] Dadaram Manohar Jadhav (Guest)
+    
+core java (J2SE) --> java 8 (java 14)
+web based application (J2EE) --> jee6 (jee7) --> jsp / servlet / jstl/ el
+persistance  layer --> jpa(interfaces), implementation (hibernate, ibatis, etc)
+rest api (web services) --> specification given by oracle, implementations(jersey, resteasy, apache cxf, spring)
+framework --> ejb, struts, spring(spring core, spring web mvc, spring data jpa, spring rest)
+
+
+
+
+web based application
+
+
+
+http
+--> protocol
+--> communication between client - server
+--> http, https, http2
+--> request --> header(hostname), body
+--> responce --> header, body
+
+
+http method
+--> get --> to get data
+--> post --> send data
+--> put --. update data
+--> delete --> delete data
+
+
+
+multipart file
+
+
+responce code (status code) --> rest api
+
+
+
+servlet
+--> class
+--> but it will be deployed on container
+--> container --> tomcat, jboss, glassfish, weblogic, nginx, websphere, pivotal , cloud based server(aws, azure, gcp)
+--> it is capable to accept request and give responce
+--> data from http request -->  request object
+--> responce from application will be stored in responce object --> http responce object
+
+
+
+oracle 
+--> provided interfaces and classes
+--> implementation for interface will be given by container(tomcat)
+
+
+
+creating appliation 
+deploy application inside container
+start
+
+
+============================================================
+Day2    5/11/2020
+============================================================
+
+
+[12:28 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet(urlPatterns = {​​​​​​​"/First"}​​​​​​​)
+public class First extends HttpServlet {​​​​​​​
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {​​​​​​​
+        PrintWriter out = response.getWriter();
+        out.print("this is using annotation");
+    }​​​​​​​
+}​​​​​​​
+
+
+
+
+
+​[12:52 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+public class StartSession extends HttpServlet {​​​​​​​
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {​​​​​​​
+        PrintWriter out = response.getWriter();
+        HttpSession session = request.getSession();    //identification value will be generated by server 
+        //this id will be useful to future communication        
+        session.setAttribute("un", "dmjadhav");        
+        
+    }​​​​​​​
+}​​​​​​​
+
+
+
+
+​[12:52 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+
+public class GetSession extends HttpServlet {​​​​​​​
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {​​​​​​​
+        PrintWriter out = response.getWriter();
+        HttpSession session = request.getSession(false);
+        String un = (String)session.getAttribute("un");
+        out.println("Username: "+ un);
+    }​​​​​​​
+}​​​​​​​
+ 
+
+=========================================
+
+Day3
+
+=========================================
+CREATE TABLE `users` (
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(20) DEFAULT NULL,
+  `userrole` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+ 
+
+insert into users values('manager', 'manager', 'manager');
+insert into users values('user', 'user', 'user');
+insert into users values('admin', 'admin', 'admin');
+
+
+[11:56 AM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage.dao;
+
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+
+import com.cybage.model.Users;
+
+
+public class AdminDao {​​​​​​​
+
+
+    public List<Users> getUsers() throws Exception{​​​​​​​
+        String sql = "select * from users";
+        Connection connection = DbUtil.getConnection();
+        PreparedStatement ps = connection.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
+        
+        List<Users> users = new ArrayList<Users>();
+        while(rs.next()) {​​​​​​​
+            users.add(new Users(rs.getString(1), rs.getString(2), rs.getString(3)));
+        }​​​​​​​
+        return users;
+    }​​​​​​​
+
+
+    public int addUser(Users user) throws Exception {​​​​​​​
+        String sql = "insert into users values(?, ?, ?)";
+        Connection connection = DbUtil.getConnection();
+        PreparedStatement ps = connection.prepareStatement(sql);
+        
+        ps.setString(1, user.getUsername());
+        ps.setString(2, user.getPassword());
+        ps.setString(3, user.getUserrole());
+        
+        
+        return ps.executeUpdate();
+    }​​​​​​​
+
+
+    public int deleteUser(String username) throws Exception{​​​​​​​
+        String sql = "delete from users where username = ?";
+        Connection connection = DbUtil.getConnection();
+        PreparedStatement ps = connection.prepareStatement(sql);        
+        ps.setString(1, username);            
+        return ps.executeUpdate();
+    }​​​​​​​
+
+
+    public Users getUser(String username) throws Exception{​​​​​​​
+        String sql = "select * from users where username = ?";
+        Connection connection = DbUtil.getConnection();
+        PreparedStatement ps = connection.prepareStatement(sql);
+        ps.setString(1, username);
+        ResultSet rs = ps.executeQuery();
+        Users  user = null;
+        if(rs.next()) {​​​​​​​
+            user = new Users(rs.getString(1), rs.getString(2), rs.getString(3));
+        }​​​​​​​
+        return user;
+    }​​​​​​​
+
+
+}​​​​​​​
+ 
+
+
+
+
+
+
+
+
+
+
+​[11:56 AM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage.service;
+
+
+import java.util.List;
+
+
+import com.cybage.dao.AdminDao;
+import com.cybage.model.Users;
+
+
+public class AdminService {​​​​​​​
+    AdminDao adminDao = new AdminDao();
+    public List<Users> getUsers() throws Exception{​​​​​​​
+        return adminDao.getUsers();
+    }​​​​​​​
+    public int addUser(Users user) throws Exception{​​​​​​​
+        return adminDao.addUser(user);
+    }​​​​​​​
+    public int deleteUser(String username) throws Exception {​​​​​​​
+         return adminDao.deleteUser(username);
+    }​​​​​​​
+    public Users getUser(String username) throws Exception {​​​​​​​
+        return adminDao.getUser(username);
+        
+    }​​​​​​​
+
+
+}​​​​​​​
+ 
+
+
+
+
+
+
+​[12:01 PM] Dadaram Manohar Jadhav (Guest)
+    <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page isELIgnored="false"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    Updating user
+    <form method="post"
+        action="<%=request.getContextPath()%>/AdminController/updateuser">
+        Username: <input type="text" name="username" value="${​​​​​​​user.username}​​​​​​​" readonly="readonly"> <br>
+        Password: <input type="password" name="password" value=""> <br>
+        Role: <input type="text" name="userrole" value="${​​​​​​​user.userrole}​​​​​​​"> <br> <input
+            type="submit" value="Update User">
+    </form>
+</body>
+</html>
+​[12:04 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage.dao;
+
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+
+import com.cybage.model.Users;
+
+
+public class AdminDao {​​​​​​​
+
+
+    public List<Users> getUsers() throws Exception{​​​​​​​
+        String sql = "select * from users";
+        Connection connection = DbUtil.getConnection();
+        PreparedStatement ps = connection.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
+
+
+        List<Users> users = new ArrayList<Users>();
+        while(rs.next()) {​​​​​​​
+            users.add(new Users(rs.getString(1), rs.getString(2), rs.getString(3)));
+        }​​​​​​​
+        return users;
+    }​​​​​​​
+
+
+    public int addUser(Users user) throws Exception {​​​​​​​
+        String sql = "insert into users values(?, ?, ?)";
+        Connection connection = DbUtil.getConnection();
+        PreparedStatement ps = connection.prepareStatement(sql);
+
+
+        ps.setString(1, user.getUsername());
+        ps.setString(2, user.getPassword());
+        ps.setString(3, user.getUserrole());
+
+
+
+        return ps.executeUpdate();
+    }​​​​​​​
+
+
+    public int deleteUser(String username) throws Exception{​​​​​​​
+        String sql = "delete from users where username = ?";
+        Connection connection = DbUtil.getConnection();
+        PreparedStatement ps = connection.prepareStatement(sql);        
+        ps.setString(1, username);            
+        return ps.executeUpdate();
+    }​​​​​​​
+
+
+    public Users getUser(String username) throws Exception{​​​​​​​
+        String sql = "select * from users where username = ?";
+        Connection connection = DbUtil.getConnection();
+        PreparedStatement ps = connection.prepareStatement(sql);
+        ps.setString(1, username);
+        ResultSet rs = ps.executeQuery();
+        Users  user = null;
+        if(rs.next()) {​​​​​​​
+            user = new Users(rs.getString(1), rs.getString(2), rs.getString(3));
+        }​​​​​​​
+        return user;
+    }​​​​​​​
+
+
+    public int updateUser(Users user)  throws Exception{​​​​​​​
+        String sql = "update users set password = ? , userrole = ? where username = ?";
+        Connection connection = DbUtil.getConnection();
+        PreparedStatement ps = connection.prepareStatement(sql);        
+        ps.setString(1, user.getPassword());
+        ps.setString(2, user.getUserrole());
+        ps.setString(3, user.getUsername());
+        return ps.executeUpdate();
+    }​​​​​​​
+
+
+}​​​​​​​
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+​[12:04 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage.service;
+
+
+import java.util.List;
+
+
+import com.cybage.dao.AdminDao;
+import com.cybage.model.Users;
+
+
+public class AdminService {​​​​​​​
+    AdminDao adminDao = new AdminDao();
+    public List<Users> getUsers() throws Exception{​​​​​​​
+        return adminDao.getUsers();
+    }​​​​​​​
+    public int addUser(Users user) throws Exception{​​​​​​​
+        return adminDao.addUser(user);
+    }​​​​​​​
+    public int deleteUser(String username) throws Exception {​​​​​​​
+         return adminDao.deleteUser(username);
+    }​​​​​​​
+    public Users getUser(String username) throws Exception {​​​​​​​
+        return adminDao.getUser(username);
+        
+    }​​​​​​​
+    public int updateUser(Users user) throws Exception{​​​​​​​
+        return adminDao.updateUser(user);        
+    }​​​​​​​
+
+
+}​​​​​​​
+ 
+
+========================================================
+Day4
+========================================================
+//log4j ki xml
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration status="info">
+    <!-- layout -->
+    <Properties>
+        <Property name="layout">%d [%t] %-5level %logger{36} - %m%n</Property>
+    </Properties>
+   
+    <!--  appenders ==> mention destination -->
+    <Appenders>
+        <Console name="Console">
+            <PatternLayout pattern="${layout}" />
+        </Console>
+          
+        <RollingFile name="MyFile" fileName="d:\mylog.log" filePattern="app.%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="${layout}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size = "1 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="20" />
+        </RollingFile>              
+    </Appenders>
+    <Loggers>
+        <Logger name="com.cybage" level="info" additivity="false">
+            <AppenderRef ref="MyFile" />
+        </Logger>
+        <Root level="info">
+            <AppenderRef ref="Console" />
+        </Root>   
+    </Loggers>
+</Configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,970 @@
+[10:51 AM] Dadaram Manohar Jadhav (Guest)
+    
+
+<!DOCTYPEhtml>
+<htmllang="en">
+<head>
+<metacharset="UTF-8">
+<metaname="viewport"content="width=device-width, initial-scale=1.0">
+<title>jQuery</title>
+<scriptdefersrc="jquery-3.5.1.min.js"></script>
+<scriptdefersrc="script.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+</head>
+<body>
+<h1>welcome to jQuery training </h1>
+</body>
+</html>
+
+​[10:51 AM] Dadaram Manohar Jadhav (Guest)
+    
+
+//document --> current document 
+//html page will be converted into document--> head, body
+$(document).ready(()=>{​​​​​​​​
+//this code will be executed when our document is fully loaded...
+    console.log('document is fully loaded...')
+}​​​​​​​​)
+
+===============================
+$==> jquery selector
+document --> current page(dom)
+ready --> indicates we need to execute this code when document fully loaded
+function() --> we are using callback function
+callback function --> function executed in future
+==============================
+//document --> current document 
+//html page will be converted into document--> head, body
+$(document).ready(function(){
+    //this code will be executed when our document is fully loaded...
+    console.log('document is fully loaded...')
+})
+===============================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery training</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="jquery-3.5.1.min.js"></script>
+    <!-- using cdn -->
+    <!-- <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <h1>Welcome to jQuery training......</h1>
+    <button>click</button>
+    <p>sjfgjsfgb</p>
+
+</body>
+</html>
++++++++++++++++++++++++++++++++
+// $(document).ready(()=>{
+//     console.log('doc is loaded')
+// })
+
+$(document).ready(()=>{
+    console.log('doc is ready and u can communicate with page')
+    $('button').click(function(){
+        let un = prompt('please enter name?')
+        console.log(un)
+    })
+})
+
+// $(document).ready(()=>{
+//     console.log('doc is ready and u can communicate with page')
+//     $("button").click(function(){
+//         $("p").hide();
+//     })
+// })
+===============================
+================================
+$(document).ready(()=>{
+    console.log('doc is ready and u can communicate with page')
+    $("button").click(function(){
+        $("button").hide();    //this-->belongs to button
+    })
+    $(this.hide())//this-->belongs to document
+})
+
+// $(document).ready(()=>{
+//     console.log('doc is ready and u can communicate with page')
+//     $("button").click(function(){
+//         $("#mypara").hide();
+//     })
+// })
+
+
+// $(document).ready(()=>{
+//     console.log('doc is ready and u can communicate with page')
+//     $('button').click(function(){
+//         let un = prompt('please enter name?')
+//         console.log(un)
+//     })
+// })
+
+// first message print on screen and on click of button para ll be hided
+// $(document).ready(()=>{
+//     console.log('doc is ready and u can communicate with page')
+//     $("button").click(function(){
+//         $("p").hide();
+//     })
+// })
+
+
+// first demo
+// $(document).ready(()=>{
+//     console.log('doc is loaded')
+// })
+++++++++++++++++++++++++++++++++
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery training</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="jquery-3.5.1.min.js"></script>
+    <!-- using cdn -->
+    <!-- <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <h1>Welcome to jQuery training......</h1>
+    <button>click</button>
+    <p id="mypara">sjfgjsfgb</p>
+
+</body>
+</html>
+=====================================
+$(document).ready(()=>{
+   
+    //excliding h4 and p inbetween elements
+    $('h4').prevUntil('h1').css('background-color','red')
+
+
+    //excliding p and h4 inbetween elements
+    // $('p').nextUntil('h4').css('background-color','red')
+
+    //applies styles to nextAll elements
+    // $('p').nextAll().css('background-color','red')
+
+    //applies styles to next element only one element
+    // $('h1').next().css('background-color','red')
+
+    //siblings
+    // $('p').siblings().css('background-color','red')
+       
+    //only h2 siblings are selected
+    // $('h1').siblings('h2').css('background-color','red')
+
+
+    // $('#container').children().css('background-color','red');
+    // $('#container').find('span').css('background-color','blue')
+})
+
++++++++++++++++++++++++++++++++++++++++++++
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery training</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="jquery-3.5.1.min.js"></script>
+    <!-- using cdn -->
+    <!-- <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div id="container">
+        <p>first para</p>
+        <h1>this is h1</h1>
+        <h2>this is h2</h2>
+        <h3>thisb is h3</h3>
+        <h4>this is h4</h4>
+    </div>
+    <p>outside main div</p>
+
+</body>
+</html>
+============================
+============================
+$(document).ready(()=>{
+    // $('*').css('color','red')
+    $(this).css('color','red')
+
+
+    //untill class ggp but excluding ggp
+    // $('li').parentsUntil('.ggp').css('border','1px solid black')
+
+
+    //untill class gp but excluding gp
+    // $('li').parentsUntil('.gp').css('border','1px solid black')
+    
+    //creates border for all including body, head,html as well
+    // $('li').parents().css('border','1px solid black')
+
+    // only selects one parent of ui
+    // $('ul').parent().css('border','1px solid black')
+
+    // only selects one parent of li
+    // $('li').parent().css('border','1px solid black')
+})
+
+++++++++++++++++++++++++++++
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery training</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="jquery-3.5.1.min.js"></script>
+    <!-- using cdn -->
+    <!-- <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="ggp">
+        <p>great grand parent</p>
+        <div class="gp">
+            <p>grand parent</p>
+            <div class="">
+            <ul>
+                <li>child</li>
+                <li>child</li>
+                <li>child</li>
+                <li>child</li>
+                <li>child</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
+============================
+
+============================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="jquery-3.5.1.min.js"></script>
+    <script defer src="second.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>welcome to second session</h1>
+    <h2>this is h2 tag...</h2>
+    <p>this is paragraph...</p>
+    <span>this is span...</span>
+    <input type="text" id="un" value="dmjadhav">
+</body>
+</html>
+++++++++++++++++++++++++++++
+$(document).ready(function(){
+    console.log($('h1').html())     //it will get original
+    $('h1').html('this is new contents')       //modify the contents
+    console.log($('h1').html())             //get modified contents
+ 
+    ///get contents of input control 
+    console.log($('#un').val())
+ 
+    //change
+    $('h1').css('background-color', 'grey')
+    console.log('current css for h1', $('h1').css('color'))
+ 
+    //add css class
+    $('h2').addClass('first')
+    $('p').addClass('first')
+    ///after some time...
+    $('p').removeClass('first')
+ 
+    //get width of paragraph
+    console.log('widht of paragraph: '+ $('p').width())
+    console.log('widht of span: '+ $('span').width())
+})
++++++++++++++++++++++++++
+
+.first{​​​​​​​​
+background-color: grey;
+color: red
+}​​​​​​​​
+
+
+===========================
+
+============================
+$(document).ready(function() {
+    $('button').click(function(){
+        // $('p').hide();//to hide element
+        // $('p').show();
+        // $('p').toggle()
+
+        // $('p').fadeIn();
+        // $('p').fadeIn('slow');
+        // $('p').fadeIn(8000);
+
+        // $('span').fadeOut();
+        // $('span').fadeToggle(3000)
+
+
+$('div').slideToggle(3000);
+    })
+})
++++++++++++++++++++++++++++++
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script src="secons.js"></script>
+</head>
+<body>
+  <button>Show/Hide content</button>
+
+  <div style="background-color:grey;width:400px;height:400px;">
+    this element is used for sliding purpose
+  </div>
+  <!-- <p style="display:none">this para ll hide and show on click of this button</p> -->
+  <!-- <span>fadout effect</span> -->
+
+  <link rel="stylesheet" href="styles.css" />
+</body>
+</html>
+==============================
+==============================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script src="secons.js"></script>
+</head>
+<body>
+  <button id="start">Animation</button>
+  <button id="stop">stop Animation</button>
+
+  <div style="background-color:grey;width:200px;height:200px;position: absolute;">
+    this is animation
+  </div>
+
+
+  <link rel="stylesheet" href="styles.css" />
+</body>
+</html>
+++++++++++++++++++++++++++++++
+$(document).ready(function() {
+    $('#start').click(function(){
+        //  $('div').animate({ left:'250px',height:'100px',width:'100px'})
+         $('div').animate({
+              left:'250px',height:'+=100px',width:'+=100px',opacity:'0.5'},
+              5000)
+
+    })
+    $('#stop').click(function(){
+        $('div').stop()
+    })
+})
++++++++++++++++++++++++++++++
+.first{
+    background-color:grey;
+    color: red;
+}
+==============================
+
+///javascript
+function fun1(){
+    let myp = document.createElement('p')
+    myp.innerHTML = 'this is new paragraph added...'
+    document.body.appendChild(myp)
+}
+ 
+//jquery
+$(document).ready(function(){
+   $('button').click(function(){
+    //    $('p').append('this content will be added in dom')
+    //    $('p').prepend('this content added before original contents')
+    $('p').after('<h3>content added after given paragraph</h3>')
+    $('p').before('<h3>content added before given paragraph</h3>')
+   })
+})
+==================================
+$(document).ready(function() {
+    $('button').click(function(){
+        // $('p').empty()
+        $('p').remove()
+    })
+})
++++++++++++++++++++++++++++++++
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script src="secons.js"></script>
+</head>
+<body>
+  <button>add new element in html</button>
+  <p>dfgsdgsdfgsdfgdfgdf</p>
+
+  <link rel="stylesheet" href="styles.css" />
+</body>
+</html>
+===============================
+
+day3
+==============================
+////post req
+$(document).ready(function(){
+    //post request and display data on console
+    $('button').click(function(){
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: 'https://jsonplaceholder.typicode.com/posts',
+            data:{
+                userId:201,
+                id:201,
+                title:'rohit',
+                body:'we r doing jquery training',
+            },
+            success: function(res){
+                console.log('record added succesfylly')
+                console.log(res)   
+            }
+        })
+    })
+})
+++++++++++++++++++++++++++++++++
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script src="secons.js"></script>
+</head>
+<body>
+  <body>
+    <button>making post req</button>
+
+  
+  <link rel="stylesheet" href="styles.css" />
+</body>
+</html>
+===============================
+
+===============================
+$(document).ready(function(){
+    //get request and display data on console
+    $('button').click(function(){
+        $.ajax({
+            type: 'GET',
+            dataType: 'json',
+            url: 'https://jsonplaceholder.typicode.com/posts',
+            success: function(res){
+                console.log('responce from server')
+                $.each(res, function(i, record){
+                    console.log('--------------------'+ i + '--------------------------')
+                    console.log('User id: '+ record.userId)
+                    console.log('Id: '+ record.id)
+                    console.log('Title: '+ record.title)
+                    console.log('Body: ' + record.body)
+                })                
+            }
+        })
+    })
+})
+++++++++++++++++++++++++++++++
+[10:43 AM] Dadaram Manohar Jadhav (Guest)
+    
+
+<!DOCTYPEhtml>
+<htmllang="en">
+<head>
+<metacharset="UTF-8">
+<metaname="viewport"content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<scriptdefersrc="jquery-3.5.1.min.js"></script>
+<scriptdefersrc="script.js"></script>
+</head>
+<body>
+<button>get data from server(REST api)</button>
+</body>
+</html>
+
+
+    
+
+
+
+==============================
+$(document).ready(function(){
+    $('button').click(function(){
+        $.ajax({
+            type: 'GET',
+            dataType: 'json',
+            url: 'http://localhost:3000/comments',
+            success: function(res){
+                console.log('successfully get data from json-server')              
+                $.each(res, function(i, v){
+                    console.log('---------------'+ i + '--------------')
+                    console.log('Id: '+ v.id)
+                    console.log('body: '+ v.body)
+                   
+                })
+            }
+        })
+    })
+})
++++++++++++++++++++++++++++++++
+{
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "typicode" },
+    { "id": 2, "title": "json-server1", "author": "typicode1" }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 },
+    { "id": 2, "body": "some comment123", "postId": 2 }
+  ],
+  "profile": [
+      { "name": "typicode" },
+      { "name": "typicode123" }
+  ],
+  "users":[
+      {"id": 123, "username": "dm123", "password": "admin123" },
+      {"id": 124, "username": "dm124", "password": "admin123" }
+  ]
+}
++++++++++++++++++++++++++++++++
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="jquery-3.5.1.min.js"></script>
+    <script defer src="script1.js"></script>
+</head>
+<body>
+    <button>get users</button>
+</body>
+</html>
+=================================
+
+=================================
+// ///get request
+$(document).ready(function(){
+    $('button').click(function(){
+        $.ajax({
+            type: 'GET',
+            dataType: 'json',
+            url: 'http://localhost:3000/users',
+            success: function(res){
+                console.log('successfully get data from json-server')
+                let users = []              
+                $.each(res, function(i, v){
+                    users += 
+                    `
+                    <div class="user">
+                        <p>Id: ${v.id}</p>
+                        <p>Username: ${v.username}</p>
+                        <p>Password: ${v.password}</p>
+                    </div>
+                    `
+                })
+                $('.container').append(users)                
+                $('img').hide()
+            }
+        })
+    })
+})
+///filter users --> with every keystroke it will filter users and show
+//matching users
+$(document).ready(function(){
+    $('#search').on('keyup', function(){
+        let searchKey = $(this).val().toLowerCase()
+        $('.user').filter(function(){
+            ///we will write logic for getting matching users
+            $(this).toggle($(this).text().toLowerCase().indexOf(searchKey) > -1)
+        })
+    })
+})
+ 
+///post request
+// $(document).ready(function(){
+//     $('button').click(function(){
+//         $.ajax({
+//             type: 'POST',
+//             dataType: 'json',
+//             url: 'http://localhost:3000/users',
+//             data: {
+//                 id: 125,
+//                 username: "dmj123",
+//                 password: "dmj123"
+//               },
+//             success: function(res){
+//                 console.log('successfully added record in json-server')              
+//                 console.log(res)
+//             }
+//         })
+//     })
+// })
++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++
+=================================
+
+=================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="jquery-3.5.1.min.js"></script>
+    <script defer src="script1.js"></script>
+</head>
+<body>
+    <button>get users</button>
+    <input type="text" id="search">
+    <div class="container"> 
+        <img src="./spinner.gif" alt="">      
+    </div>
+</body>
+</html>
+++++++++++++++++++++++++++++++++
+// ///get request
+$(document).ready(function(){
+    $('button').click(function(){
+        $.ajax({
+            type: 'GET',
+            dataType: 'json',
+            url: 'http://localhost:3000/comments',
+            success: function(res){
+                console.log('successfully get data from json-server')
+                let users = []              
+                $.each(res, function(i, v){
+                    users += 
+                    `
+                    <div class="user">
+                        <p>Id: ${v.id}</p>
+                        <p>Username: ${v.body}</p>
+                        <p>Password: ${v.postId}</p>
+                    </div>
+                    `
+                })
+                $('.container').append(users)                
+                $('img').hide()
+            }
+        })
+    })
+})
+///filter users --> with every keystroke it will filter users and show
+//matching users
+$(document).ready(function(){
+    $('#search').on('keyup', function(){
+        let searchKey = $(this).val().toLowerCase()
+        $('.user').filter(function(){
+            ///we will write logic for getting matching users
+            $(this).toggle($(this).text().toLowerCase().indexOf(searchKey) > -1)
+        })
+    })
+})
+ 
+///post request
+// $(document).ready(function(){
+//     $('button').click(function(){
+//         $.ajax({
+//             type: 'POST',
+//             dataType: 'json',
+//             url: 'http://localhost:3000/users',
+//             data: {
+//                 id: 125,
+//                 username: "dmj123",
+//                 password: "dmj123"
+//               },
+//             success: function(res){
+//                 console.log('successfully added record in json-server')              
+//                 console.log(res)
+//             }
+//         })
+//     })
+// })
+
+// ///post request
+// $(document).ready(function(){
+//     $('button').click(function(){
+//         $.ajax({
+//             type: 'POST',
+//             dataType: 'json',
+//             url: 'http://localhost:3000/users',
+//             data: {
+//                 id:5,
+//                 username: "suradfsdfsj",
+//                 password: "sursdfsfsdaj"
+//               },
+//             success: function(res){
+//                 console.log('successfully added record in json-server')              
+//                 console.log(res)
+//             }
+//         })
+//     })
+// })
++++++++++++++++++++++++++++++++++++++
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "json-server1",
+      "author": "typicode1"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "id": 4,
+      "body": "some comment 2",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "some comment123",
+      "postId": 2
+    }
+  ],
+  "profile": [
+    {
+      "name": "typicode"
+    },
+    {
+      "name": "typicode123"
+    }
+  ],
+  "users": [
+
+    {
+      "id": 12,
+      "username": "ankita",
+      "password": "admin123"
+    },
+    {
+      "id": 1,
+      "username": "rajat",
+      "password": "admin123"
+    },
+    {
+      "id": 3,
+      "username": "nick",
+      "password": "admin123"
+    },
+    {
+      "id": "4",
+      "username": "saurabh",
+      "password": "rohit"
+    },
+    
+
+ 
+    {
+      "username": "rohit",
+      "password": "rohit",
+      "id": "exxb01A"
+    }
+  
+  ]
+}
+====================================
+=================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="jquery-3.5.1.min.js"></script>
+    <script defer src="script1.js"></script>
+</head>
+<body>
+    <button>get users</button>
+    <input type="text" id="search">
+    <div class="container"> 
+        <img src="./spinner.gif" alt="">      
+    </div>
+</body>
+</html>
+++++++++++++++++++++++++++++++++
+// ///get request
+$(document).ready(function(){
+    $('button').click(function(){
+        $.ajax({
+            type: 'GET',
+            dataType: 'json',
+            url: 'http://localhost:3000/users',
+            success: function(res){
+                console.log('successfully get data from json-server')
+                let users = []              
+                $.each(res, function(i, v){
+                    users += 
+                    `
+                    <div class="user">
+                        <p>Id: ${v.id}</p>
+                        <p>Username: ${v.username}</p>
+                        <p>Password: ${v.password}</p>
+                    </div>
+                    `
+                })
+                $('.container').append(users)                
+                $('img').hide()
+            }
+        })
+    })
+})
+///filter users --> with every keystroke it will filter users and show
+//matching users
+$(document).ready(function(){
+    $('#search').on('keyup', function(){
+        let searchKey = $(this).val().toLowerCase()
+        $('.user').filter(function(){
+            ///we will write logic for getting matching users
+            $(this).toggle($(this).text().toLowerCase().indexOf(searchKey) > -1)
+        })
+    })
+})
+ 
+///post request
+// $(document).ready(function(){
+//     $('button').click(function(){
+//         $.ajax({
+//             type: 'POST',
+//             dataType: 'json',
+//             url: 'http://localhost:3000/users',
+//             data: {
+//                 id: 125,
+//                 username: "dmj123",
+//                 password: "dmj123"
+//               },
+//             success: function(res){
+//                 console.log('successfully added record in json-server')              
+//                 console.log(res)
+//             }
+//         })
+//     })
+// })
+
+// ///post request
+// $(document).ready(function(){
+//     $('button').click(function(){
+//         $.ajax({
+//             type: 'POST',
+//             dataType: 'json',
+//             url: 'http://localhost:3000/users',
+//             data: {
+//                 id:5,
+//                 username: "suradfsdfsj",
+//                 password: "sursdfsfsdaj"
+//               },
+//             success: function(res){
+//                 console.log('successfully added record in json-server')              
+//                 console.log(res)
+//             }
+//         })
+//     })
+// })
++++++++++++++++++++++++++++++++++++++
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "json-server1",
+      "author": "typicode1"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "id": 4,
+      "body": "some comment 2",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "some comment123",
+      "postId": 2
+    }
+  ],
+  "profile": [
+    {
+      "name": "typicode"
+    },
+    {
+      "name": "typicode123"
+    }
+  ],
+  "users": [
+
+    {
+      "id": 12,
+      "username": "ankita",
+      "password": "admin123"
+    },
+    {
+      "id": 1,
+      "username": "rajat",
+      "password": "admin123"
+    },
+    {
+      "id": 3,
+      "username": "nick",
+      "password": "admin123"
+    },
+    {
+      "id": "4",
+      "username": "saurabh",
+      "password": "rohit"
+    },
+    
+
+ 
+    {
+      "username": "rohit",
+      "password": "rohit",
+      "id": "exxb01A"
+    }
+  
+  ]
+}
+====================================

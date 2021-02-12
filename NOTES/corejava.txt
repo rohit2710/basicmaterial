@@ -1,0 +1,1871 @@
+==================================================================
+Day1
+==================================================================
+package com.cybage;
+
+ 
+
+import java.util.Arrays;
+
+ 
+
+public class FirstExample {
+    //method will be called by jvm
+    //method will be called without object as it is static
+    public static void main(String []argument){
+        System.out.println("Welcome to java training....");
+        String name = "dadaram jadhav";
+        char gender = 'M';
+        int salary = 12;
+        boolean isWorking = true;
+        long population = 1234567890L;
+        double gdp = 12_324_325_325_234.34D;
+        float per = 66.66F;
+        System.out.println("Name: "+ name);
+        System.out.println("Gender "+ gender);
+        System.out.println("Salary: "+ salary);
+        System.out.println("Isworking : "+ isWorking);
+        System.out.println("Population: "+ population);
+        System.out.println("GDP: "+ gdp);
+        System.out.println("Percentage: "+ per);
+        //formatted printing
+        System.out.printf("My name is %s   %s", name, name);
+        System.out.println();
+        ////array
+        //        int arr[] = new int[10];
+        int arr[] = {40, 50, 60, 10, 20, 30};
+        //external iteration --> iterations controlled by programmer, chances of mistake are more
+        for(int i = 0; i < arr.length ; i++){
+            System.out.println(arr[i]);
+        }        
+        //internal iteration --> iterations controller by api, chances of mistake are less, 
+        //less customization
+        for(int temp : arr){
+            if(temp == 30) continue;
+            System.out.println(temp);
+        }
+        
+        Arrays.parallelSort(arr);    //it will use multiple thread for sorting if required 
+        System.out.println("after sorting");
+        for(int temp : arr){            
+            System.out.println(temp);
+        }
+    
+    }
+}
+
+===================================================================
+Day2
+==================================================================
+[1:26 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+import java.util.Scanner;
+
+
+public class UI {​​​​​​​
+    public static void main(String[] args) {​​​​​​​
+        System.out.println("Welcome to HDFC bank");
+        withdrawl();
+    }​​​​​​​
+    
+    public static void withdrawl(){​​​​​​​
+        BankingService bs = new BankingService();
+        Scanner scan = new Scanner(System.in);
+        bs.loadAccounts();
+        bs.displayAccounts();
+        System.out.println("Please enter account number: ");
+        String accNumber = scan.next();
+        System.out.println("Please enter withdrawl amount: ");
+        double amount = scan.nextDouble();
+        try{​​​​​​​
+            double availableBalance = bs.withdrawl(accNumber, amount);
+            System.out.println("Withdrawl success: Available balance is : "+ availableBalance);    
+        }​​​​​​​catch(AccountException ae){​​​​​​​
+            System.out.println("HDFC: error: 103: "+ ae.getMessage());
+        }​​​​​​​
+    }​​​​​​​
+    public static void openAccount(){​​​​​​​
+        BankingService bs = new BankingService();
+        try{​​​​​​​
+            bs.openAccount(AccountType.SAVING.toString(), "dm101", "Pune", 5000);    
+        }​​​​​​​catch(AccountException ae){​​​​​​​
+            System.out.println("HDFC: error 102 : "+ ae.getMessage());
+        }​​​​​​​
+    }​​​​​​​
+    public static void getBalance(){​​​​​​​
+        BankingService bs = new BankingService();
+        Scanner scan = new Scanner(System.in);
+        bs.loadAccounts();
+        bs.displayAccounts();
+        System.out.println("getting balance");
+        System.out.println("Please enter account number");
+        String accNumber = scan.next();
+        try{​​​​​​​
+            double availableBalance = bs.getBalance(accNumber);
+            System.out.println("Available balance is : "+ availableBalance);    
+        }​​​​​​​catch(AccountException ae){​​​​​​​
+            System.out.println("HDFC: error: 101: "+ ae.getMessage());
+        }​​​​​​​
+    }​​​​​​​
+}​​​​​​​
+
+
+
+
+​[1:26 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+//we cannot instantiate class, common properties for subclasses can be stored in abstract classes
+public abstract class Account {​​​​​​​
+
+
+    private String accNumber;
+    private String accType;
+    private Customer customer;        //composition
+    private double balance;
+
+
+    public Account() {​​​​​​​
+        super();
+    }​​​​​​​
+    public Account(String accNumber, String accType, Customer customer, double balance) {​​​​​​​
+        super();
+        this.accNumber = accNumber;
+        this.accType = accType;
+        this.customer = customer;
+        this.balance = balance;
+    }​​​​​​​
+    public String getAccNumber() {​​​​​​​
+        return accNumber;
+    }​​​​​​​
+    public void setAccNumber(String accNumber) {​​​​​​​
+        this.accNumber = accNumber;
+    }​​​​​​​
+    public String getAccType() {​​​​​​​
+        return accType;
+    }​​​​​​​
+    public void setAccType(String accType) {​​​​​​​
+        this.accType = accType;
+    }​​​​​​​
+    public Customer getCustomer() {​​​​​​​
+        return customer;
+    }​​​​​​​
+    public void setCustomer(Customer customer) {​​​​​​​
+        this.customer = customer;
+    }​​​​​​​
+    public double getBalance() {​​​​​​​
+        return balance;
+    }​​​​​​​
+    public void setBalance(double balance) {​​​​​​​
+        this.balance = balance;
+    }​​​​​​​
+    @Override
+    public String toString() {​​​​​​​
+        return "Account [accNumber=" + accNumber + ", accType=" + accType + ", customer=" + customer + ", balance="
+                + balance + "]";
+    }​​​​​​​
+}​​​​​​​
+
+
+
+
+
+​[1:26 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+public class AccountException extends Exception{​​​​​​​
+    //override constructor
+    public AccountException(String msg) {​​​​​​​
+        super(msg);
+     }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+​[1:26 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+public enum AccountType {​​​​​​​
+    SAVING,
+    CURRENT,
+    CREDITCARD,
+    HOMELOAN,
+    CARLOAN,
+    EDUCATIONLOAN
+}​​​​​​​
+ 
+
+
+
+​[1:26 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+//banking rules will be defined by rbi and all bank need to adhere to rbi rules
+public interface Banking {​​​​​​​
+    public static float roi = 6.5F;
+    public Account openAccount(
+            String accType, 
+            String name, 
+            String address, 
+            double balance
+            ) throws AccountException;
+    public double getBalance(String accNumber) throws AccountException;
+    public double withdrawl(String accNumber, double amount) throws AccountException;
+}​​​​​​​
+ 
+
+
+
+​[1:26 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+//this class is specific certain project
+public class BankingService implements Banking{​​​​​​​
+
+
+    CustomerService cs = new CustomerService();
+    Account accounts[] = new Account[5];
+    //this will come from database using dao layer
+    public void loadAccounts(){​​​​​​​
+        Customer c1 = cs.addCustomer("dm101",    "pune101");
+        Customer c2 = cs.addCustomer("dm102",    "pune102");
+        Customer c3 = cs.addCustomer("dm103",    "pune103");
+        Customer c4 = cs.addCustomer("dm104",    "pune104");
+        Customer c5 = cs.addCustomer("dm105",    "pune105");
+
+
+        accounts[0] = new SavingAccount(generateAccNumber(), AccountType.SAVING.toString(), c1, 10000);
+        accounts[1] = new CurrentAccount(generateAccNumber(), AccountType.SAVING.toString(), c2, 20000);
+        accounts[2] = new SavingAccount(generateAccNumber(), AccountType.SAVING.toString(), c3, 30000);
+        accounts[3] = new CurrentAccount(generateAccNumber(), AccountType.SAVING.toString(), c4, 40000);
+        accounts[4] = new SavingAccount(generateAccNumber(), AccountType.SAVING.toString(), c5, 50000);                
+    }​​​​​​​
+    public void displayAccounts(){​​​​​​​
+        for(Account account: accounts){​​​​​​​
+            System.out.println(account);
+        }​​​​​​​
+    }​​​​​​​
+
+
+    public String generateAccNumber(){​​​​​​​
+        return "H"+ Math.round(Math.random()*99999);
+    }​​​​​​​
+    @Override
+    public Account openAccount(String accType,
+            String name, 
+            String address, 
+            double balance) throws AccountException 
+    {​​​​​​​        
+        if(balance < 10000){​​​​​​​
+            throw new AccountException("Cannot create account as amount is less than 10000");
+        }​​​​​​​
+
+
+        //1. create customer
+        Customer c1 = cs.addCustomer(name, address);
+
+
+        switch (accType) {​​​​​​​
+        case "SAVING":        
+            return new SavingAccount(generateAccNumber(), accType, c1, balance);
+        case "CURRENT":
+            return new CurrentAccount(generateAccNumber(), accType, c1, balance);
+        }​​​​​​​
+        return null;
+    }​​​​​​​
+    @Override
+    public double getBalance(String accNumber) throws AccountException{​​​​​​​
+        double availableBalance  = 0;
+        boolean found = false;
+        for(Account account: accounts){​​​​​​​
+            if(account.getAccNumber().equals(accNumber)){​​​​​​​
+                availableBalance = account.getBalance();
+                found = true;
+                break;
+            }​​​​​​​
+        }​​​​​​​
+        if(found) return availableBalance;
+        else {​​​​​​​
+            throw new AccountException("Account does not exists...");
+        }​​​​​​​
+    }​​​​​​​
+    @Override
+    public double withdrawl(String accNumber, double amount) throws AccountException {​​​​​​​
+        double availableBalance  = 0;
+        double tempBalance = 0;
+        boolean found = false;
+        
+        for(Account account: accounts){​​​​​​​
+            if(account.getAccNumber().equals(accNumber)){​​​​​​​
+                availableBalance = account.getBalance();
+                tempBalance = availableBalance - amount;
+                if(tempBalance < 10000){​​​​​​​
+                    throw new AccountException("Cannot withdrawl as effective balance goes below 10000");
+                }​​​​​​​else{​​​​​​​
+                    account.setBalance(tempBalance);
+                }​​​​​​​
+                found = true;
+                break;
+            }​​​​​​​
+        }​​​​​​​
+        if(found) return tempBalance;
+        else {​​​​​​​
+            throw new AccountException("Account does not exists");
+        }​​​​​​​
+    }​​​​​​​
+}​​​​​​​
+
+
+
+
+
+
+
+
+​[1:27 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+public class CurrentAccount extends Account{​​​​​​​
+
+
+    //can add more properties
+    public CurrentAccount() {​​​​​​​
+        super();
+    }​​​​​​​
+
+
+    public CurrentAccount(String accNumber, String accType, Customer customer, double balance) {​​​​​​​
+        super(accNumber, accType, customer, balance);
+    }​​​​​​​    
+}​​​​​​​
+ 
+
+
+
+
+
+​[1:27 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+public class Customer {​​​​​​​
+    
+    private String custId;
+    private String custName;
+    private String custAddress;
+    
+    public Customer() {​​​​​​​
+        super();        
+    }​​​​​​​
+    public Customer(String custId, String custName, String custAddress) {​​​​​​​
+        super();        
+        this.custId = custId;
+        this.custName = custName;
+        this.custAddress = custAddress;
+    }​​​​​​​
+    public String getCustId() {​​​​​​​
+        return custId;
+    }​​​​​​​
+    
+    public String getCustName() {​​​​​​​
+        return custName;
+    }​​​​​​​
+    public void setCustName(String custName) {​​​​​​​
+        this.custName = custName;
+    }​​​​​​​
+    public String getCustAddress() {​​​​​​​
+        return custAddress;
+    }​​​​​​​
+    public void setCustAddress(String custAddress) {​​​​​​​
+        this.custAddress = custAddress;
+    }​​​​​​​
+    //if we want string representation of object then override toString method
+    @Override
+    public String toString() {​​​​​​​
+        return "Customer [custId=" + custId + ", custName=" + custName + ", custAddress=" + custAddress + "]";
+    }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+​[1:27 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+public class CustomerService implements iCustomer{​​​​​​​
+
+
+    public String generateCustID(){​​​​​​​
+        return "C"+ Math.round(Math.random()*999999999);
+    }​​​​​​​
+    @Override
+    public Customer addCustomer(String name, String address) {​​​​​​​        
+        return new Customer(generateCustID(), name, address);
+    }​​​​​​​    
+}​​​​​​​
+ 
+
+
+
+
+​[1:27 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+public interface iCustomer {​​​​​​​
+    public Customer addCustomer(String name, String address);
+    //more methods
+}​​​​​​​
+ 
+
+package com.cybage;
+
+ 
+
+public class SavingAccount extends Account{
+
+ 
+
+    public SavingAccount() {
+        super();
+    }
+
+ 
+
+    public SavingAccount(String accNumber, String accType, Customer customer, double balance) {
+        super(accNumber, accType, customer, balance);
+    }
+
+ 
+
+}
+
+===========================================
+if required
+============================================
+
+[11:59 AM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+//this class is specific certain project
+public class BankingService implements Banking{​​​​​​​
+    
+    CustomerService cs = new CustomerService();
+    Account accounts[] = new Account[5];
+    //this will come from database using dao layer
+    public void loadAccounts(){​​​​​​​
+        Customer c1 = cs.addCustomer("dm101",    "pune101");
+        Customer c2 = cs.addCustomer("dm102",    "pune102");
+        Customer c3 = cs.addCustomer("dm103",    "pune103");
+        Customer c4 = cs.addCustomer("dm104",    "pune104");
+        Customer c5 = cs.addCustomer("dm105",    "pune105");
+        
+        accounts[0] = new SavingAccount(generateAccNumber(), AccountType.SAVING.toString(), c1, 10000);
+        accounts[1] = new CurrentAccount(generateAccNumber(), AccountType.SAVING.toString(), c2, 20000);
+        accounts[2] = new SavingAccount(generateAccNumber(), AccountType.SAVING.toString(), c3, 30000);
+        accounts[3] = new CurrentAccount(generateAccNumber(), AccountType.SAVING.toString(), c4, 40000);
+        accounts[4] = new SavingAccount(generateAccNumber(), AccountType.SAVING.toString(), c5, 50000);                
+    }​​​​​​​
+    public void displayAccounts(){​​​​​​​
+        for(Account account: accounts){​​​​​​​
+            System.out.println(account);
+        }​​​​​​​
+    }​​​​​​​
+    
+    public String generateAccNumber(){​​​​​​​
+        return "H"+ Math.round(Math.random()*99999);
+    }​​​​​​​
+    @Override
+    public Account openAccount(String accType, String name, String address, double balance) {​​​​​​​        
+
+
+        //1. create customer
+        Customer c1 = cs.addCustomer(name, address);
+        
+        switch (accType) {​​​​​​​
+        case "SAVING":        
+            return new SavingAccount(generateAccNumber(), accType, c1, balance);
+        case "CURRENT":
+            return new CurrentAccount(generateAccNumber(), accType, c1, balance);
+        }​​​​​​​
+        return null;
+    }​​​​​​​
+    @Override
+    public double getBalance(String accNumber) {​​​​​​​
+        double availableBalance  = 0;
+        boolean found = false;
+        for(Account account: accounts){​​​​​​​
+            if(account.getAccNumber().equals(accNumber)){​​​​​​​
+                availableBalance = account.getBalance();
+                found = true;
+                break;
+            }​​​​​​​
+        }​​​​​​​
+        if(found) return availableBalance;
+        else return -1111;
+    }​​​​​​​
+}​​​​​​​
+
+
+
+
+​[12:00 PM] 
+      Pratiksha (Guest) joined the meeting.
+    ​[12:04 PM] 
+      Pratiksha (Guest) left the conversation.
+    ​[12:06 PM] Shrutikab (Guest)
+    yes sir actually im working on VM so there  is no access for ca or audio 
+​[12:12 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+public class SavingAccount extends Account{​​​​​​​
+
+
+    public SavingAccount() {​​​​​​​
+        super();
+    }​​​​​​​
+
+
+    public SavingAccount(String accNumber, String accType, Customer customer, double balance) {​​​​​​​
+        super(accNumber, accType, customer, balance);
+    }​​​​​​​
+
+
+}​​​​​​​
+ 
+
+
+
+
+
+
+​[12:12 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+public class CurrentAccount extends Account{​​​​​​​
+
+
+    //can add more properties
+    public CurrentAccount() {​​​​​​​
+        super();
+    }​​​​​​​
+
+
+    public CurrentAccount(String accNumber, String accType, Customer customer, double balance) {​​​​​​​
+        super(accNumber, accType, customer, balance);
+    }​​​​​​​    
+}​​​​​​​
+ 
+
+
+[11:08 AM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+public class Account {​​​​​​​
+
+
+    private String accNumber;
+    private String accType;
+    private Customer customer;        //composition
+    private double balance;
+    
+    {​​​​​​​
+        this.accNumber = "A"+ Math.round(Math.random()*99999);
+    }​​​​​​​
+    public Account() {​​​​​​​
+        super();
+    }​​​​​​​
+    public Account(String accNumber, String accType, Customer customer, double balance) {​​​​​​​
+        super();
+        this.accNumber = accNumber;
+        this.accType = accType;
+        this.customer = customer;
+        this.balance = balance;
+    }​​​​​​​
+    public String getAccNumber() {​​​​​​​
+        return accNumber;
+    }​​​​​​​
+    public void setAccNumber(String accNumber) {​​​​​​​
+        this.accNumber = accNumber;
+    }​​​​​​​
+    public String getAccType() {​​​​​​​
+        return accType;
+    }​​​​​​​
+    public void setAccType(String accType) {​​​​​​​
+        this.accType = accType;
+    }​​​​​​​
+    public Customer getCustomer() {​​​​​​​
+        return customer;
+    }​​​​​​​
+    public void setCustomer(Customer customer) {​​​​​​​
+        this.customer = customer;
+    }​​​​​​​
+    public double getBalance() {​​​​​​​
+        return balance;
+    }​​​​​​​
+    public void setBalance(double balance) {​​​​​​​
+        this.balance = balance;
+    }​​​​​​​
+    @Override
+    public String toString() {​​​​​​​
+        return "Account [accNumber=" + accNumber + ", accType=" + accType + ", customer=" + customer + ", balance="
+                + balance + "]";
+    }​​​​​​​
+}​​​​​​​
+
+
+
+
+​[11:10 AM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+public class Account {​​​​​​​
+
+
+    private String accNumber;
+    private String accType;
+    private Customer customer;        //composition
+    private double balance;
+    
+    {​​​​​​​
+        this.accNumber = "A"+ Math.round(Math.random()*99999);
+    }​​​​​​​
+    public Account() {​​​​​​​
+        super();
+    }​​​​​​​
+    public Account(String accType, Customer customer, double balance) {​​​​​​​
+        super();
+        this.accType = accType;
+        this.customer = customer;
+        this.balance = balance;
+    }​​​​​​​
+    public String getAccNumber() {​​​​​​​
+        return accNumber;
+    }​​​​​​​
+    public void setAccNumber(String accNumber) {​​​​​​​
+        this.accNumber = accNumber;
+    }​​​​​​​
+    public String getAccType() {​​​​​​​
+        return accType;
+    }​​​​​​​
+    public void setAccType(String accType) {​​​​​​​
+        this.accType = accType;
+    }​​​​​​​
+    public Customer getCustomer() {​​​​​​​
+        return customer;
+    }​​​​​​​
+    public void setCustomer(Customer customer) {​​​​​​​
+        this.customer = customer;
+    }​​​​​​​
+    public double getBalance() {​​​​​​​
+        return balance;
+    }​​​​​​​
+    public void setBalance(double balance) {​​​​​​​
+        this.balance = balance;
+    }​​​​​​​
+    @Override
+    public String toString() {​​​​​​​
+        return "Account [accNumber=" + accNumber + ", accType=" + accType + ", customer=" + customer + ", balance="
+                + balance + "]";
+    }​​​​​​​
+}​​​​​​​
+
+
+
+
+
+
+
+
+============================================
+
+[2:44 PM] Dadaram Manohar Jadhav (Guest)
+    
+multithreading
+--> multithreading
+--> multithreading in java
+--> framework
+--> improvement in java8
+
+
+application(project) --> deploy project on client machine --> project will be started--> end users will start using project
+
+
+--> when application started --> process will be created...
+--> only one process created for one application
+--> process consists of multiple task
+--> for every task we need to seperate process, it will create problem of process communication(interprocess communication)
+--> we can create small process within process (small process --> thread)
+
+
+one application --> execution --> process (we can create multiple thread for different task)
+every thread will get memory , cpu time, resources from process
+only execution task will be different for different thread
+common resources will be used from process itself
+
+
+
+multithreading possible at
+OS   --> win32 library, pthread (os)
+programming language  --> Thread api (jvm)
+
+
+
+
+
+
+​[3:22 PM] 
+      Akash Mane (Guest) left the conversation.
+    ​[3:24 PM] 
+      Akash Mane (Guest) joined the meeting.
+    ​[3:27 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+//currently project is managed by single person
+public class XYZProject {​​​​​​​
+    public static void main(String[] args) throws Exception{​​​​​​​
+        System.out.println("Welcome to xyz project(manager)");
+        System.out.println("Thread id and name: "+ Thread.currentThread().getId() + Thread.currentThread().getName());
+                
+        Programmer p1 = new Programmer();            //tagging, kt, idenfity task        
+        p1.start();                                    //he will actually start doing work..
+        
+        Tester t1 = new Tester();
+        t1.start();
+        
+        p1.join(5*1000);                //i will wait till you finish programming
+        t1.join(8*1000);                        //i will wait till you finish testing
+        
+        System.out.println("3. ---------deploy application----------");
+        System.out.println("4. ----------finished project----------");
+    }​​​​​​​
+}​​​​​​​    
+
+
+
+​[3:27 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+//hr has hired programmer with ---- name, induction also completed...
+public class Programmer extends Thread{​​​​​​​
+    //activities done by thread
+    @Override
+    public void run() {​​​​​​​        
+        try{​​​​​​​
+            sleep(1);    
+            System.out.println("1.   i am doining programming and my name is : "+ getName());            
+        }​​​​​​​catch(InterruptedException ie ){​​​​​​​
+            System.out.println(ie.getMessage());
+        }​​​​​​​
+    }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+​[3:27 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+//hire another person for testing
+public class Tester extends Thread{​​​​​​​
+    @Override
+    public void run() {​​​​​​​
+        System.out.println("2. i am doing testing and name is : "+ getName());
+    }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+​[3:46 PM] 
+      akshay kamthe (Guest) joined the meeting.
+    ​[4:29 PM] 
+      suraj bhadrike (Guest) left the conversation.
+    ​[4:30 PM] Dadaram Manohar Jadhav (Guest)
+    
+functionalinterface
+--> interface --> define contract 
+--> we have only signature of the method
+--> method will be implemented by required classes
+
+
+lambda expression --> if it is very short logic( 1 liner)
+
+
+Printer
+
+
+
+Runnable p1 = () -> System.out.println("1. i am doing programming ...");
+
+
+define method in functional interface
+implement using lambda expression
+or implement using existing method(method reference)
+increase efficiency (decreasing number of class file)
+dynamic method invocation
+it works like simple method execution (whenever required create it , execute it ,remove it)
+ 
+
+
+
+
+[4:48 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+//currently project is managed by single person
+public class XYZProject {​​​​​​​
+    public static void main(String[] args) throws Exception{​​​​​​​
+        System.out.println("Welcome to xyz project(manager)");
+        System.out.println("Thread id and name: "+ Thread.currentThread().getId() + Thread.currentThread().getName());
+        
+        //functional programming ( functional interface and implement using lambda/method reference)
+        Runnable p1 = () -> System.out.println("1. i am doing programming ...");        
+        Thread threadP1= new Thread(p1);
+        threadP1.start();
+        
+        Runnable t1 = () -> System.out.println("2. i am doing testing....");
+        Thread threadT1 = new Thread(t1);
+        threadT1.start();
+        
+        threadP1.join(5*1000);                //i will wait till you finish programming
+        threadT1.join(8*1000);                //i will wait till you finish testing
+        
+        System.out.println("3. ---------deploy application----------");
+        System.out.println("4. ----------finished project----------");
+    }​​​​​​​
+}​​​​​​​    
+
+
+
+​[4:49 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage.functional;
+
+
+@FunctionalInterface
+public interface Arithmetic {​​​​​​​
+    public void add(int a, int b);
+
+
+    default void method(){​​​​​​​
+        System.out.println("this is default method");
+    }​​​​​​​
+    default void method1(){​​​​​​​
+        System.out.println("this is default method");
+    }​​​​​​​
+    default void method2(){​​​​​​​
+        System.out.println("this is default method");
+    }​​​​​​​
+    static void method3(){​​​​​​​
+        System.out.println("this is default method");
+    }​​​​​​​
+    default void method4(){​​​​​​​
+        System.out.println("this is default method");
+    }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+
+​[4:49 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage.functional;
+
+
+@FunctionalInterface
+public interface Printer {​​​​​​​
+    public void print(String data );
+}​​​​​​​
+ 
+
+
+
+​[4:49 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage.functional;
+
+
+public class TestPrinter {​​​​​​​
+    public static void main(String[] args) {​​​​​​​
+        System.out.println("printer testing");
+        
+        Printer canon = TestPrinter::myprint;            //method reference
+        Printer HP = TestPrinter::myprint;
+        
+        canon.print("cannon message");
+        HP.print("hp message");
+    }​​​​​​​
+    public static void myprint(String data){​​​​​​​
+        System.out.println("printing data using canon "+ data );
+    }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+​[4:49 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage.functional;
+
+
+public class UI {​​​​​​​
+    public static void main(String[] args) {​​​​​​​
+        //it work just like function, dynamic method invoking
+        Arithmetic calculator =  (a, b) ->  System.out.println("addition : "+ (a+b));        
+        calculator.add(10,  20);
+    }​​​​​​​
+}​​​​​​​
+
+
+
+​[4:55 PM] Dadaram Manohar Jadhav (Guest)
+    
+correct
+interface bank{​​​​​​​}​​​​​​​
+interface insurance{​​​​​​​}​​​​​​​
+class hdfc implement bank, insurance{​​​​​​​}​​​​​​​
+
+
+wrong 
+abstract class bank{​​​​​​​}​​​​​​​
+abstract class insurance{​​​​​​​}​​​​​​​
+class hdfc implement bank, insurance{​​​​​​​}​​​​​​​
+
+
+correct
+abstract class HDFC{​​​​​​​}​​​​​​​
+class HDFCBank extends HDFC{​​​​​​​}​​​​​​​
+class HDFCInsurance  extends HDFC{​​​​​​​}​​​​​​​
+class HDFClife  extends HDFC{​​​​​​​}​​​​​​​
+
+
+wrong
+interface HDFC{​​​​​​​}​​​​​​​
+class HDFCBank implements HDFC{​​​​​​​}​​​​​​​
+class HDFCInsurance  implements  HDFC{​​​​​​​}​​​​​​​
+class HDFClife  implements  HDFC{​​​​​​​}​​​​​​​
+
+
+============================
+Day3 collection
+============================
+List: make collection of element, element can be repeated, sequence should be maintained, addition/deletion can be random, no sorting
+ArrayList: element will be stored sequentially, addition/deletion is time consuming
+LinkedList: element will be stored on different memory, addition/deletion is time efficient
+
+ 
+
+Set: unique, sequence may or may not be maintained, sorting may or may not happen, for storage hashing may or may not be used
+HashSet: efficient storage, efficient access, it will not maintain sequence, no sorting
+LinkedHashSet:  efficient storage, efficient access, it will  maintain sequence, no sorting
+TreeSet: it will not  maintain sequence, sorting
+
+ 
+
+
+Queue: element can be deleted/added from particular position
+deque: double ended queue, addition/deletion can happen from start or end
+priorityqueue: element can be added/deleted from any position
+
+ 
+
+
+i want to make collection of object with associated key --> Map
+e.g. city: popluation, state: capital, employee:working hours, employee:salary
+HashTable: hashing, sequence not maintained, multithreading, synchronized, slow execution
+HashMap: hashing, sequence not maintained, not good for multithreading, not synchronized, fast execution
+LinkedHashMap: hashing, sequence maintained , not good for multithreading, not synchronized, fast execution
+TreeMap: sorted using key,  not good for multithreading, not synchronized, fast execution
+
+
+
+[11:37 AM] Ashish (Guest)
+    amar plz go on mute
+​[11:45 AM] 
+      snehal shevade (Guest) joined the meeting.
+    ​[11:57 AM] Priyanka Kanzar (Guest)
+    
+package com.cybage;
+
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Function;
+
+
+public class UI {​​​​​​​
+
+
+    public static void main(String[] args) {​​​​​​​
+         List<Product> list=new ArrayList<>();
+         list.add(new Product(101,"P101"));
+         list.add(new Product(102,"P102"));
+         list.add(new Product(103,"P103"));
+         list.add(new Product(104,"P104"));
+         list.add(new Product(105,"P105"));
+      
+         
+        
+        
+         
+         
+         //using stream list will be stored in stream
+         list
+         .stream()
+         .filter((t) -> {​​​​​​​if(t.getPid() >104) return true ; else return false;}​​​​​​​)
+         .map((t)->t.setPname(t.getPname().toUpperCase()))
+         .forEach((product)-> System.out.println(product))
+         
+        }​​​​​​​
+
+
+    }​​​​​​​
+
+
+
+
+
+
+​[11:59 AM] 
+      Chetan Mahajan(Guest) left the conversation.
+    ​[12:03 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class UI {​​​​​​​
+    public static void main(String[] args) {​​​​​​​
+         List<Product> list = new ArrayList<>();
+         list.add(new Product(101, "p101"));
+         list.add(new Product(102, "p102"));
+         list.add(new Product(103, "p103"));
+         list.add(new Product(104, "p104"));
+         list.add(new Product(105, "p105"));
+         list.add(new Product(106, "p106"));
+         
+         list
+         .stream()
+         .filter((t) -> {​​​​​​​    if(t.getPid() > 104) return true;    else return false;    }​​​​​​​)
+         .forEach((product) -> System.out.println(product));
+    }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+
+​[12:05 PM] Ashish (Guest)
+    plz add chetan
+​[12:05 PM] 
+      snehal (Guest) joined the meeting.
+    ​[12:05 PM] 
+      Chetan Mahajan(Guest) joined the meeting.
+    ​[12:05 PM] 
+      shubhamjo (Guest) joined the meeting.
+    ​[12:05 PM] 
+      Tejashri  Phalke (Guest) joined the meeting.
+    
+
+
+[12:18 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+public class Product implements Comparable<Product>{​​​​​​​
+    private int pid;
+    private String pname;
+    public Product() {​​​​​​​
+        super();
+        // TODO Auto-generated constructor stub
+    }​​​​​​​
+    public Product(int pid, String pname) {​​​​​​​
+        super();
+        this.pid = pid;
+        this.pname = pname;
+    }​​​​​​​
+    public int getPid() {​​​​​​​
+        return pid;
+    }​​​​​​​
+    public void setPid(int pid) {​​​​​​​
+        this.pid = pid;
+    }​​​​​​​
+    public String getPname() {​​​​​​​
+        return pname;
+    }​​​​​​​
+    public void setPname(String pname) {​​​​​​​
+        this.pname = pname;
+    }​​​​​​​
+    @Override
+    public String toString() {​​​​​​​
+        return "\nProduct [pid=" + pid + ", pname=" + pname + "]";
+    }​​​​​​​
+    //it will define how comparison should happen3
+    //ascending sorting --> id
+//    @Override
+//    public int compareTo(Product o) {​​​​​​​        
+//        return this.getPid() - o.getPid();
+//    }​​​​​​​
+    
+    //descending sorting --> id
+//        @Override
+//        public int compareTo(Product o) {​​​​​​​        
+//            return o.getPid() - this.getPid();
+//        }​​​​​​​
+    
+    
+        //ascending sorting --> name
+//        @Override
+//        public int compareTo(Product o) {​​​​​​​        
+//            return this.getPname().compareTo(o.getPname());
+//        }​​​​​​​
+        
+        //descending sorting --> name
+        @Override
+        public int compareTo(Product o) {​​​​​​​        
+            return o.getPname().compareTo(this.getPname());
+        }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+​[12:40 PM] shubhamjo (Guest)
+     please share NameComparator class
+​[12:51 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
+
+public class SetDemo2 {​​​​​​​
+    public static void main(String[] args) {​​​​​​​
+        Set<Product> set = new TreeSet<>((o1,o2)->o1.getPid() - o2.getPid());
+        
+        //1 --> unique, 2 --> sorting 
+        set.add(new Product(105, "ap105"));        
+        set.add(new Product(101, "fp101"));
+        set.add(new Product(102, "ecp102"));
+        set.add(new Product(102, "ecp102"));
+        set.add(new Product(103, "gp103"));
+        set.add(new Product(104, "dp104"));
+
+
+        
+        System.out.println("size of set: "+ set.size());
+        System.out.println("set of product : "+ set);
+    }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+
+
+​[1:01 PM] Rajesh Zambre (Guest)
+    list
+        .stream()
+        .filter((p)->{​​​​​​​ if(p.getPid()>101)return true; else return false;}​​​​​​​)
+        .map((p)->{​​​​​​​p.setPname(p.getPname().toUpperCase());return p.getPname();}​​​​​​​)
+        .forEach((product)-> System.out.println(product));
+​[1:07 PM] Dadaram Manohar Jadhav (Guest)
+    
+[casestudy.jar] (https://cybage-my.sharepoint.com/personal/dadaramj_cybage_com/Documents/Microsoft Teams Chat Files/casestudy.jar)​[1:08 PM] Dadaram Manohar Jadhav (Guest)
+    \\pune-share\Training_Cyb\Vinita\JavaCDAC_FrTP-Sep'20\1.TrainingContent\Training content
+
+
+
+==================================================================================
+Day4
+==================================================================================
+
+[11:53 AM] Dadaram Manohar Jadhav (Guest)
+    \\pune-share\Training_Cyb\Vinita\JavaCDAC_FrTP-Sep'20\1.TrainingContent\Training content
+​[11:54 AM] 
+      chetan mahajan (Guest) left the conversation.
+    ​[11:56 AM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage.dao;
+
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+
+import com.cybage.Account;
+import com.cybage.dbutil.DbUtil;
+
+
+public class AccountDaoImpl implements AccountDao{​​​​​​​
+
+
+    @Override
+    public String addAccount(Account account) throws Exception {​​​​​​​
+        String sql = "insert into account values(?, ?, ?, ?)";
+        Connection con = DbUtil.getConnection();
+        con.setAutoCommit(false);
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setString(1, account.getAccNumber());
+        ps.setString(2, account.getAccType());
+        ps.setString(3, account.getCustId());
+        ps.setDouble(4, account.getBalance());
+
+
+        if(ps.executeUpdate() == 1) {​​​​​​​
+            con.commit();            //customer + account will be committed
+            ps.close(); 
+            con.close();  
+            return account.getAccNumber();
+        }​​​​​​​
+        else{​​​​​​​ 
+            con.rollback();
+            ps.close(); 
+            con.close(); 
+            return null;
+        }​​​​​​​
+    }​​​​​​​
+
+
+}​​​​​​​
+ 
+
+
+
+
+
+
+
+
+​[11:57 AM] 
+      Anand K (Guest) joined the meeting.
+    ​[12:04 PM] 
+      Pratik (Guest) left the conversation.
+    ​[12:06 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage.dao;
+
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+
+import com.cybage.Account;
+import com.cybage.AccountException;
+import com.cybage.dbutil.DbUtil;
+
+
+public class AccountDaoImpl implements AccountDao{​​​​​​​
+
+
+    @Override
+    public String addAccount(Account account) throws Exception {​​​​​​​
+        String sql = "insert into account values(?, ?, ?, ?)";
+        Connection con = DbUtil.getConnection();
+        con.setAutoCommit(false);
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setString(1, account.getAccNumber());
+        ps.setString(2, account.getAccType());
+        ps.setString(3, account.getCustId());
+        ps.setDouble(4, account.getBalance());
+
+
+        if(ps.executeUpdate() == 1) {​​​​​​​
+            con.commit();            //customer + account will be committed
+            ps.close(); 
+            con.close();  
+            return account.getAccNumber();
+        }​​​​​​​
+        else{​​​​​​​ 
+            con.rollback();
+            ps.close(); 
+            con.close(); 
+            return null;
+        }​​​​​​​
+    }​​​​​​​
+
+
+    @Override
+    public double getBalance(String accNumber) throws AccountException, Exception {​​​​​​​
+        String sql = "select balance from account where accnumber = ?";
+        Connection con = DbUtil.getConnection();
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setString(1, accNumber);
+        ResultSet rs= ps.executeQuery();
+        if(rs.next()){​​​​​​​
+            return rs.getDouble(1);
+        }​​​​​​​else{​​​​​​​
+            throw new AccountException("account doesnot exists...");
+        }​​​​​​​
+        
+    }​​​​​​​
+
+
+
+
+
+}​​​​​​​
+ 
+
+
+
+
+
+
+
+
+
+
+​[12:08 PM] 
+      Pratik Mergal (Guest) joined the meeting.
+    ​[12:26 PM] 
+      Anand K (Guest) left the conversation.
+    ​[12:29 PM] Dadaram Manohar Jadhav (Guest)
+    dbcp2
+
+    common-pool
+
+    dbcp2
+
+    common-pool
+
+    commons logging
+
+    
+package com.cybage.dbutil;
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+
+import org.apache.commons.dbcp2.BasicDataSource;
+
+
+public class DbUtil {​​​​​​​
+    public static String dbUrl = "jdbc:mysql://localhost:3306/cybage";
+    public static String dbUser = "root";
+    public static String dbPassword = "admin123";
+
+
+    //without connection pool
+//    public static Connection getConnection() throws Exception{​​​​​​​
+//        //Class.forName("com.mysql.jdbc.Driver");        //class will be loaded automatically (thin driver)
+//        Connection con = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
+//        return con;
+//    }​​​​​​​
+    
+    //getting connection from connection pool
+    public static Connection getConnection() throws Exception{​​​​​​​
+        Connection con = getDataSource().getConnection();
+        return con;
+    }​​​​​​​
+    private static BasicDataSource getDataSource(){​​​​​​​
+        BasicDataSource ds = new BasicDataSource();
+        ds.setUrl(dbUrl);
+        ds.setUsername(dbUser);
+        ds.setPassword(dbPassword);
+        ds.setMinIdle(5);
+        ds.setMaxIdle(10);
+        ds.setMaxOpenPreparedStatements(100);
+        return ds;
+        
+    }​​​​​​​
+}​​​​​​​
+
+[12:29 PM] Dadaram Manohar Jadhav (Guest)
+    dbcp2
+​[12:29 PM] Dadaram Manohar Jadhav (Guest)
+    common-pool
+​[12:29 PM] Dadaram Manohar Jadhav (Guest)
+    commons logging
+
+
+======================================================
+File IO
+======================================================
+[5:09 PM] Dadaram Manohar Jadhav (Guest)
+    
+
+//first create large file...
+ 
+const fs = require('fs');
+const file = fs.createWriteStream('./big.file.txt');
+ 
+for(let i=0; i<= 1e6; i++) {​​​​​​​​
+  file.write('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum\n');
+}​​​​​​​​
+file.end();
+
+ 
+
+​[5:09 PM] Dadaram Manohar Jadhav (Guest)
+    save as file.js
+​[5:09 PM] Dadaram Manohar Jadhav (Guest)
+    from same location
+​[5:09 PM] Dadaram Manohar Jadhav (Guest)
+    node file.js
+​[5:17 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+
+public class CopyFile {​​​​​​​
+    public static void main(String[] args) throws Exception{​​​​​​​
+        FileInputStream input = new FileInputStream("input.txt");
+        FileOutputStream output = new FileOutputStream("output.txt", true);
+        
+        int data = 0;
+        while( (data = input.read()) != -1){​​​​​​​
+            output.write(data);
+        }​​​​​​​
+        output.flush();
+        output.close();
+        input.close();
+    }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+
+​[5:17 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+
+public class CopyImage {​​​​​​​
+    public static void main(String[] args) throws Exception{​​​​​​​
+        FileInputStream input = new FileInputStream("image.jpeg");
+        FileOutputStream output = new FileOutputStream("copyimage.jpeg");
+        
+        int data = 0;
+        while( (data = input.read()) != -1){​​​​​​​
+            output.write(data);
+        }​​​​​​​
+        output.flush();
+        output.close();
+        input.close();
+    }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+
+​[5:18 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.util.Date;
+
+
+
+public class CopyLargeFile {​​​​​​​
+    public static void main(String[] args) throws Exception{​​​​​​​
+        FileInputStream input = new FileInputStream("big.file.txt");
+        FileOutputStream output = new FileOutputStream("copyofbigfile.txt");
+        
+        System.out.println("Start copying large file: "+ new Date());
+        int data = 0;
+        while( (data = input.read()) != -1){​​​​​​​
+            output.write(data);
+        }​​​​​​​
+        System.out.println("Finish copying large file: "+ new Date());
+        output.flush();
+        output.close();
+        input.close();
+    }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+
+​[5:18 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+import java.io.FileInputStream;
+
+
+public class ReadingFile {​​​​​​​
+    public static void main(String[] args) throws Exception{​​​​​​​
+        FileInputStream input = new FileInputStream("input.txt");
+        int data = 0;
+        while(  (data = input.read()) != -1  ){​​​​​​​
+            System.out.print((char)data);
+        }​​​​​​​
+    }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+
+​[5:18 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage;
+
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+
+public class WritingFile {​​​​​​​
+    public static void main(String[] args) throws Exception{​​​​​​​
+        FileOutputStream output = new FileOutputStream("output.txt", true);
+        String data = "this data will be written inside file...";
+        output.write(data.getBytes());
+        output.flush();            //it will save data in file
+        output.close();
+    }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+
+​[5:18 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage.characterstream;
+
+
+import java.io.FileReader;
+import java.io.FileWriter;
+
+
+public class CopyImage {​​​​​​​
+    public static void main(String[] args) throws Exception{​​​​​​​
+        FileReader reader = new FileReader("image.jpeg");
+        FileWriter writer = new FileWriter("copyimagewithwriter.jpeg");
+        int data = 0;
+        while( (data = reader.read()) != -1 ){​​​​​​​
+            writer.write(data);
+        }​​​​​​​
+        writer.flush();
+        writer.close();
+        reader.close();
+    }​​​​​​​
+}​​​​​​​
+
+[5:48 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage.nio;
+
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+
+
+public class ReadingFile {​​​​​​​
+    public static void main(String[] args) throws Exception{​​​​​​​
+        System.out.println("reading file using nio");
+        Path reader = Paths.get("input.txt");    //opening file
+            
+        List<String> data = Files.readAllLines(reader);        //reading file...
+        data
+        .parallelStream()
+        .forEach(System.out::println);
+    }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+
+​[5:48 PM] 
+      Tejashri Phalke (Guest) left the conversation.
+    ​[5:53 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage.nio;
+
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+
+public class WritingFile {​​​​​​​
+    public static void main(String[] args) throws Exception{​​​​​​​
+        Path p = Paths.get("niooutput.txt");        //information about file
+        Path newFile = Files.createFile(p);            //create file
+        
+        String data = "this data will be written in file using nio";
+        Files.write(newFile, data.getBytes());        //write data in file
+    }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+
+​[5:55 PM] 
+      Tejashri (Guest) joined the meeting.
+    ​[5:58 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage.nio;
+
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+
+
+public class CopyFile {​​​​​​​
+    public static void main(String[] args) throws Exception{​​​​​​​
+        Path reading = Paths.get("nioinput.txt");    //information of source file
+        Path writing = Paths.get("myoutput.txt");    //information of destinantion file
+        
+        Path myoutput = Files.createFile(writing);    //create file for writing
+        
+        List<String> data = Files.readAllLines(reading);    //read data from source
+        Files.write(myoutput, data);                        //write data into destination
+        
+    }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+
+​[6:00 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage.nio;
+
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+
+
+public class CopyFile {​​​​​​​
+    public static void main(String[] args) throws Exception{​​​​​​​
+        Path reading = Paths.get("nioinput.txt");    //information of source file
+        Path writing = Paths.get("myoutput1.txt");    //information of destinantion file
+        
+        Files.copy(reading, writing);
+    }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+
+​[6:04 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage.nio;
+
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Date;
+import java.util.List;
+
+
+public class CopyLargeFile {​​​​​​​
+    public static void main(String[] args) throws Exception{​​​​​​​
+        Path reading = Paths.get("big.file.txt");    //information of source file
+        Path writing = Paths.get("copybigfile.txt");    //information of destinantion file
+        System.out.println("started copying: "+ new Date());
+        Files.copy(reading, writing);
+        System.out.println("finish copying: "+ new Date());
+    }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+[5:58 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage.nio;
+
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+
+
+public class CopyFile {​​​​​​​
+    public static void main(String[] args) throws Exception{​​​​​​​
+        Path reading = Paths.get("nioinput.txt");    //information of source file
+        Path writing = Paths.get("myoutput.txt");    //information of destinantion file
+        
+        Path myoutput = Files.createFile(writing);    //create file for writing
+        
+        List<String> data = Files.readAllLines(reading);    //read data from source
+        Files.write(myoutput, data);                        //write data into destination
+        
+    }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+
+​[6:00 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage.nio;
+
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+
+
+public class CopyFile {​​​​​​​
+    public static void main(String[] args) throws Exception{​​​​​​​
+        Path reading = Paths.get("nioinput.txt");    //information of source file
+        Path writing = Paths.get("myoutput1.txt");    //information of destinantion file
+        
+        Files.copy(reading, writing);
+    }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+
+​[6:04 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage.nio;
+
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Date;
+import java.util.List;
+
+
+public class CopyLargeFile {​​​​​​​
+    public static void main(String[] args) throws Exception{​​​​​​​
+        Path reading = Paths.get("big.file.txt");    //information of source file
+        Path writing = Paths.get("copybigfile.txt");    //information of destinantion file
+        System.out.println("started copying: "+ new Date());
+        Files.copy(reading, writing);
+        System.out.println("finish copying: "+ new Date());
+    }​​​​​​​
+}​​​​​​​
+ 
+
+
+
+
+​[6:16 PM] Dadaram Manohar Jadhav (Guest)
+    
+package com.cybage.properties;
+
+
+import java.io.FileReader;
+import java.util.Properties;
+
+
+public class ReadingProperties {​​​​​​​
+    public static void main(String[] args) throws Exception{​​​​​​​
+        FileReader fr = new FileReader("app.properties");    //reading file
+        Properties props = new Properties();                //properties to convert data into key value
+        props.load(fr);        
+        
+        System.out.println("Name:: "+ props.getProperty("name"));
+        System.out.println("address:: "+ props.getProperty("address"));        
+    }​​​​​​​
+}​​​​​​​
+ 
+================================================================
+Day4   3/11/20
+==================================================================
+
+garbage collection
+--> it is about removing object from jvm
+--> it will be done by jvm
+--> it will be totally taken care by jvm
+--> as programmer we don't have any control on destroying object
+--> System.gc() --> we are instructing jvm to perform garbage collection, but when to run garbage collector will be totally
+decided by jvm
+--> finalize(){......//final wish}  --> Object class --> will avaialble for every class
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+

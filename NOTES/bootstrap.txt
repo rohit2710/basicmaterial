@@ -1,0 +1,1094 @@
+####using cdn
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ 
+<body>
+    <h1>Welcome to bootstrap training...</h1>
+    <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+ 
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+ 
+</html>
+========================================
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ 
+<body>
+    <h1>Welcome to bootstrap training...</h1>
+    
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="bootstrap.js"></script>
+    <script src="jquery-3.5.1.min.js"></script>
+</body>
+ 
+</html>
+===========================================
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ 
+<body>
+    <h1>Welcome to bootstrap training...</h1>
+    <!-- responsive container -->
+    <div class="container">fixed width container</div>
+    <hr>
+    <div class="container pt-3 my-3 border">fixed width container</div>
+ 
+    <!-- full width container -->
+    <div class="container-fluid">this is full width container</div>
+
+
+
+
+
+
+
+ 
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</body>
+ 
+</html>
+=================================
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="bootstrap.css" />
+    <script src="bootstrap.js"></script>
+    <script src="jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="styles.css" /> -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css" />
+
+</head>
+  <body>
+    <h1>Welcome to bootstrap training</h1>
+
+    <div class="container">small devices</div>
+    <hr>
+    <div class="container-sm" >Small devices</div>
+    <hr>
+    <div class="container-md" >medium devices</div>
+    <hr>
+    <div class="container-lg" >Large devices</div>
+    <hr>
+    <div class="container-xl" >extra Large devices</div>
+
+
+  </body>
+</html>
+++++++++++++++++++++++++++++++++++
+.container, .container-sm{
+    background-color: grey;
+}
+
+.container-md{
+    background-color:red;
+}
+
+.container-lg{
+    background-color:aquamarine;
+}
+
+.container-xl {
+    background-color:lightseagreen;
+    max-width: 1488px;
+}
+===================================
+
+===================================
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="bootstrap.css" />
+    <script src="bootstrap.js"></script>
+    <script src="jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="styles.css" /> -->
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Welcome to bootstrap training</h1>
+    <div class="container-fluid">
+        <h1>column grid system using flexbox</h1>
+        <div class="row">
+            <div class="col">First column </div>
+            <div class="col">Second column</div>
+            <div class="col">Third column</div>
+            <div class="col">Fourth column</div>
+            <div class="col">Fifth column</div>
+
+        </div>
+    </div>
+  
+  </body>
+</html>
+
++++++++++++++++++++++++++++++++++++
+.container-fluid .row .col{
+    background-color:gray;
+}
+===================================
+
+
+=====================================
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="bootstrap.css" />
+    <script src="bootstrap.js"></script>
+    <script src="jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="styles.css" /> -->
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Welcome to bootstrap training</h1>
+    <div class="display-1">
+      this is imp heading
+    </div>
+    <div class="display-2">
+      this is imp heading
+    </div>
+    <div class="display-3">
+      this is imp heading
+    </div>
+    <div class="display-4">
+      this is imp heading
+    </div>
+    <!-- <div class="container-fluid">
+      <h1>column grid system using flexbox</h1>
+      <div class="row">
+        <div class="col-xl-2">First column</div>
+        <div class="col-xl-4">Second column</div>
+        <div class="col-xl-6">Third column</div> -->
+
+    <!-- <div class="col-3">Fourth column</div>
+        <div class="col-3">Fifth column</div> -->
+    <!-- <div class="col">First column </div>
+            <div class="col">Second column</div>
+            <div class="col">Third column</div>
+            <div class="col">Fourth column</div>
+            <div class="col">Fifth column</div> -->
+    <!-- </div>
+    </div> -->
+    <!-- <div class="container">small devices</div>
+    <hr />
+    <div class="container-sm">Small devices</div>
+    <hr />
+    <div class="container-xl">medium devices</div>
+    <hr />
+    <div class="container-lg">Large devices</div>
+    <hr />
+    <div class="container-xl">extra Large devices</div> -->
+  </body>
+</html>
++++++++++++++++++++++++++++++++++++++
+/* .container-fluid .row .col{
+    background-color:gray;
+} */
+/* .col-xl-2{
+    background-color:red
+}
+.col-xl-4{
+    background-color:grey
+}
+.col-xl-6{
+    background-color:aqua
+} */
+/* .container, .container-sm{
+    background-color: grey;
+}
+
+.container-md{
+    background-color:red;
+}
+
+.container-lg{
+    background-color:aquamarine;
+}
+
+.container-xl {
+    background-color:lightseagreen;
+    max-width: 1488px;
+} */
+=====================================
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <h1>Welcome to bootstrap training...</h1>
+
+    <p>normal text</p>
+    <p class="text-muted">muted text</p>
+    <p class="text-success">success text</p>
+    <p class="text-warning">warning text</p>
+    <p class="text-danger">danger text</p>
+
+    <p class="bg-success">background color</p>
+    <p class="bg-info">background color</p>
+    <p class="bg-warning">background color</p>
+    <p class="bg-muted">background color</p>
+
+    <table class="table-striped">
+      <tr class="bg-success text-warning">
+        <td>first name</td>
+        <td>last name</td>
+        <td>address</td>
+        <td>address</td>
+        <td>address</td>
+        <td>address</td>
+        <td>address</td>
+        <td>address</td>
+        <td>address</td>
+        <td>address</td>
+      </tr>
+      <tr class="text-success">
+        <td>rohit</td>
+        <td>varne</td>
+        <td>address</td>
+        <td>address</td>
+        <td>address</td>
+        <td>address</td>
+        <td>address</td>
+        <td>address</td>
+        <td>address</td>
+        <td>address</td>
+      </tr>
+      <tr>
+        <td>rohit</td>
+        <td>varne</td>
+        <td>gargoti</td>
+      </tr>
+      <tr>
+        <td>rohit</td>
+        <td>varne</td>
+        <td>gargoti</td>
+      </tr>
+      <tr>
+        <td>rohit</td>
+        <td>varne</td>
+        <td>gargoti</td>
+      </tr>
+      <tr>
+        <td>rohit</td>
+        <td>varne</td>
+        <td>gargoti</td>
+      </tr>
+      <tr>
+        <td>rohit</td>
+        <td>varne</td>
+        <td>gargoti</td>
+      </tr>
+      <tr>
+        <td>rohit</td>
+        <td>varne</td>
+        <td>gargoti</td>
+      </tr>
+      <tr>
+        <td>rohit</td>
+        <td>varne</td>
+        <td>gargoti</td>
+      </tr>
+      <tr>
+        <td>rohit</td>
+        <td>varne</td>
+        <td>gargoti</td>
+      </tr>
+    </table>
+  </body>
+</html>
+============================================
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <h1>Welcome to bootstrap training...</h1>
+
+    <!-- to make corner rounded  (rounded is the class)-->
+    <!-- <img class="rounded" src="img.jpeg" alt="image">
+      
+    <img class="rounded-circle" src="img.jpeg" alt="image"> 
+
+    <img class="img-thumbnail" src="img.jpeg" alt="image">
+    
+    <img class="rounded-circle float-right" src="img.jpeg" alt="image"> -->
+    <img class="mx-auto d-block" src="img.jpeg" alt="image">
+    <img class=".img-fluid(max-width:100% and height:auto)" src="img.jpeg" alt="image">
+
+
+
+  </body>
+</html>
+============================
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <h1>Welcome to bootstrap training...</h1>
+
+    <button>button</button>
+
+    <button class="btn">button</button>
+    <button class="btn btn-primary">button</button>
+    <button class="btn btn-success">button</button>
+    <button class="btn btn-warning">button</button>
+    <button class="btn btn-danger">button</button>
+    <button class="btn btn-info">button</button>
+    <button class="btn btn-outline-secondary">button</button>
+    <button class="btn btn-primary disabled">disabled button</button>
+    <button class="btn btn-primary">
+      <span class="spinner-border spinner-border-sm"></span>
+      spinner
+    </button>
+
+
+
+
+
+    <!-- <p class="alert alert-success">successfull from submission</p>
+    <p class="alert alert-danger">danger from submission</successfull from submission</p>
+    <p class="alert alert-warning">warning from submission</warning from submission</successfull from submission</p>
+    <p class="alert alert-primary">primary from submission</p>
+    <p class="alert alert-secondary">secondary from submission</p>
+    <p class="alert alert-info">info from submission</p>
+    <p class="alert alert-dismissable">dismissable from submission</p> -->
+
+
+  </body>
+</html>
+=========================
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <h1>Welcome to bootstrap training...</h1>
+    <hr />
+    <div class="progress">
+      <p class="progress-bar bg-primary">90%</p>
+      <p class="progress-bar bg-success">70%</p>
+      <p class="progress-bar bg-danger">40%</p>
+      <p class="progress-bar bg-danger">30%</p>
+    </div>
+    <br>
+    <div class="progress">
+        <p class="progress-bar bg-primary">90%</p>
+      </div>
+      <br>
+
+    <!-- <div>
+      unread email 10
+    </div>
+    <div>
+      unread email <span class="badge">10</span>
+      unread email <span class="badge badge-primary">10</span>
+      unread email <span class="badge badge-danger">10</span>
+      unread email <span class="badge badge-success">10</span>
+    </div>
+    <div>
+      unread email <span class="badge badge-danger">10</span>
+    </div>
+    <div>
+      unread email <span class="badge badge-success">10</span>
+    </div> -->
+    <hr />
+  </body>
+</html>
+=========================
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <h1>Welcome to bootstrap training...</h1>
+    <hr />
+    <div class="progress">
+      <p class="progress-bar bg-primary">90%</p>
+      <p class="progress-bar bg-success">70%</p>
+      <p class="progress-bar bg-danger">40%</p>
+      <p class="progress-bar bg-danger">30%</p>
+    </div>
+    <br>
+    <div class="progress">
+        <p class="progress-bar bg-primary">90%</p>
+      </div>
+      <br>
+
+    <!-- <div>
+      unread email 10
+    </div>
+    <div>
+      unread email <span class="badge">10</span>
+      unread email <span class="badge badge-primary">10</span>
+      unread email <span class="badge badge-danger">10</span>
+      unread email <span class="badge badge-success">10</span>
+    </div>
+    <div>
+      unread email <span class="badge badge-danger">10</span>
+    </div>
+    <div>
+      unread email <span class="badge badge-success">10</span>
+    </div> -->
+    <hr />
+  </body>
+</html>
++++++++++++++++++
+.progress-bar{
+    width: 70%;
+    height:20px;
+    padding:10px;
+}
+==========================
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <ul class="pagination justify-content-center">
+        <li class="page-item"><a href="#" class="page-link"><<</a></li>
+
+      <li class="page-item"><a href="#" class="page-link">1</a></li>
+      <li class="page-item"><a href="#" class="page-link">2</a></li>
+      <li class="page-item"><a href="#" class="page-link">3</a></li>
+      <li class="page-item"><a href="#" class="page-link">4</a></li>
+      <li class="page-item"><a href="#" class="page-link">5</a></li>
+
+      <li class="page-item"><a href="#" class="page-link">>></a></li>
+
+    </ul>
+
+    <!-- <div class="spinner-border"></div>
+    <div class="spinner-border text-success"></div>
+    <div class="spinner-border text-primary"></div>
+    <div class="spinner-border text-danger"></div> -->
+  </body>
+</html>
+==========================
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="items">
+      <div class="card" style="width: 250px">
+        <img src="img.jpeg" class="card-img-top" alt="Computer" />
+        <div class="card-body">
+          <h2 class="card-title">Computer</h2>
+          <p class="card-text">This is latest computer</p>
+          <a href="#" class="btn btn-success">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 250px">
+        <img src="img.jpeg" class="card-img-top" alt="Computer" />
+        <div class="card-body">
+          <h2 class="card-title">Computer</h2>
+          <p class="card-text">This is latest computer</p>
+          <a href="#" class="btn btn-success">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 250px">
+        <img src="img.jpeg" class="card-img-top" alt="Computer" />
+        <div class="card-body">
+          <h2 class="card-title">Computer</h2>
+          <p class="card-text">This is latest computer</p>
+          <a href="#" class="btn btn-success">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 250px">
+        <img src="img.jpeg" class="card-img-top" alt="Computer" />
+        <div class="card-body">
+          <h2 class="card-title">Computer</h2>
+          <p class="card-text">This is latest computer</p>
+          <a href="#" class="btn btn-success">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 250px">
+        <img src="img.jpeg" class="card-img-top" alt="Computer" />
+        <div class="card-body">
+          <h2 class="card-title">Computer</h2>
+          <p class="card-text">This is latest computer</p>
+          <a href="#" class="btn btn-success">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 250px">
+        <img src="img.jpeg" class="card-img-top" alt="Computer" />
+        <div class="card-body">
+          <h2 class="card-title">Computer</h2>
+          <p class="card-text">This is latest computer</p>
+          <a href="#" class="btn btn-success">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 250px">
+        <img src="img.jpeg" class="card-img-top" alt="Computer" />
+        <div class="card-body">
+          <h2 class="card-title">Computer</h2>
+          <p class="card-text">This is latest computer</p>
+          <a href="#" class="btn btn-success">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 250px">
+        <img src="img.jpeg" class="card-img-top" alt="Computer" />
+        <div class="card-body">
+          <h2 class="card-title">Computer</h2>
+          <p class="card-text">This is latest computer</p>
+          <a href="#" class="btn btn-success">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 250px">
+        <img src="img.jpeg" class="card-img-top" alt="Computer" />
+        <div class="card-body">
+          <h2 class="card-title">Computer</h2>
+          <p class="card-text">This is latest computer</p>
+          <a href="#" class="btn btn-success">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 250px">
+        <img src="img.jpeg" class="card-img-top" alt="Computer" />
+        <div class="card-body">
+          <h2 class="card-title">Computer</h2>
+          <p class="card-text">This is latest computer</p>
+          <a href="#" class="btn btn-success">Add to cart</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
++++++++++++++++++++++++++++++++++
+.items{
+    display: flex;
+}
+=================================
+########vertical nav bar
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- <nav class="navbar justify-content-center navbar-light bg-light"> -->
+    <nav class="navbar justify-content-center navbar-light bg-primary">
+      <a href="#" class="navbar-brand">
+        <img src="img.jpeg" alt="img" style="width:30%">
+      </a>
+      <ul class="navbar-nav" style="list-style-type: none">
+        <li class="navbar-item active">
+          <a href="#" class="nav-link">Home</a>
+        </li>
+        <li class="navbar-item active">
+          <a href="#" class="nav-link">Home</a>
+        </li>
+        <li class="navbar-item active">
+          <a href="#" class="nav-link">Home</a>
+        </li>
+        <li class="navbar-item active">
+          <a href="#" class="nav-link">Home</a>
+        </li>
+        <li class="navbar-item active">
+          <a href="#" class="nav-link">Home</a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>
+===================================
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- <nav class="navbar justify-content-center navbar-light bg-light"> -->
+    <nav class="navbar-expand-md 
+    justify-content-center 
+    navbar-light 
+    bg-primary 
+    sticky-top "
+    >
+      <a href="#" class="navbar-brand">
+        <img src="img.jpeg" alt="img" style="width:30%">
+      </a>
+      <ul class="navbar-nav" style="list-style-type: none">
+        <li class="navbar-item active">
+          <a href="#" class="nav-link">Home</a>
+        </li>
+        <li class="navbar-item active">
+          <a href="#" class="nav-link">Home</a>
+        </li>
+        <li class="navbar-item active">
+          <a href="#" class="nav-link">Home</a>
+        </li>
+        <li class="navbar-item active">
+          <a href="#" class="nav-link">Home</a>
+        </li>
+        <li class="navbar-item active">
+          <a href="#" class="nav-link">Home</a>
+        </li>
+        <form action="#" class="form-inline">
+          <input type="text" class="form-control mr-sm-2">
+          <input type="submit" class="btn btn-warning" value="search">
+        </form>
+      </ul>
+    </nav>
+    <p style="margin-top: 500px; padding: top 300px;">
+        The standard Lorem Ipsum passage, used since the 1500s
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        
+        Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+        
+        1914 translation by H. Rackham
+        "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
+        
+        Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+        
+        1914 translation by H. Rackham
+        "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."
+    </p>
+  </body>
+</html>
+==================================
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- <form action="" style="width:75%" class="form-inline"> -->
+    <form action="" style="width:75%" class="was-validated">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" required minlength="3"/>
+        <div class="valid-feedback">Valid Username</div>
+        <div class="invalid-feedback">Invalid Username</div>
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" />
+      </div>
+      <button class="btn btn-success">register</button>
+    </form>
+  </body>
+</html>
+============================
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer>
+      function fun1(){
+        let ts= document.querySelector('.toast')
+        ts.style.display='inline'
+      }
+    </script>
+  </head>
+
+  <body>
+    <button onclick="fun1()" title="this is button">show toast</button>
+    <div class="toast">
+      <div class="toast-header">header</div>
+      <div class="toast-body">body</div>
+    </div>
+  </body>
+</html>
+==================================
+
+

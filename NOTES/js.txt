@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <h1>Welcome to js training........</h1>
+    <button onmouseover ="fun3()">click</button>
+</body>
+</html>
+++++++++++++++++++++++++++++
+
+function fun3(){
+     console.log('fun3')
+}
+==============================
+function fun3(){
+     //console.log('fun3')
+
+     //window.alert('Hi')
+     //alert('Hi')//both are same
+
+    //var ans = confirm('Do you what to contineu')
+    //console.log(ans)
+
+     document.write('It remove old dom')
+    
+}
+++++++++++++++++++++++++++++++
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <h1>Welcome to js training........</h1>
+    <button onmouseover ="fun3()">click</button>
+</body>
+</html>
+==============================
+function fun3(){
+   // document.write('It remove old dom')
+    document.querySelector('#myPara').innerHTML="mouse hover added successfully"//this updates dom
+}
++++++++++++++++++++++++++++++
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <h1>Welcome to js training........</h1>
+    <p id="myPara"></p>
+    <button onmouseover ="fun3()">click</button>
+</body>
+</html>
+===============================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <button onmouseover ="fun1()">click</button>
+    
+</body>
+</html>
+
++++++++++++++++++++++++++++++++++++
+
+function fun1(){
+    var nm='rohit'//string
+    var mob=4868454 //num
+    var per=67.76 //
+    var isWorking=true
+    console.log(typeof(isWorking))
+    var isWorking='yes working'
+    console.log(typeof(isWorking))
+
+    address='pune'
+    console.log('address is  :  '+address)
+
+}
+================================
+=================================
+var address='kartaj'
+function fun1(){
+    var nm='rohit'//string
+    var mob=4868454 //num
+    var per=67.76 //
+    var isWorking=true
+    console.log(typeof(isWorking))
+    var isWorking='yes working'
+    console.log(typeof(isWorking))
+
+    address='pune'
+    console.log('address is  :  '+address)
+
+}
+function fun2(){
+    //console.log('name is  :  '+nm)//error nm not defined
+    console.log('address is  :  '+address)
+}
+
++++++++++++++++++++++++++++++++++
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <button onclick ="fun1()">click</button>
+    <button onclick ="fun2()">click</button>
+</body>
+</html>
+
+=================================
+
+=================================
+function fun1() {
+  var score = [54, 23, 365, 34, 234, 123, 98978, 237];
+  console.log(score);
+  //for of loop
+  for (var i of score) {
+    console.log(i);
+  }
+  // var greater300 = score.filter(function(x){
+  //     return x > 300
+  // })
+  // console.log(greater300)
+  
+  //same thing using arrow function
+//   var greater300 = score.filter((x)=> {
+//     return x > 300;
+//   });
+//   console.log(greater300);
+
+    //same thing using arrow function withot return keyword
+    var greater300 = score.filter((x)=>( x > 300 ));
+    console.log(greater300);
+    //original array is not updated in
+
+    //sorting  //original array is modified
+    console.log('sorted array ');
+    score.sort((x,y)=>{
+        return x-y //x-y==>positive,negative,0
+    })
+    console.log(score);
+
+    console.log('sorted array in desc order');
+    score.sort((x,y)=>{
+        return y-x //x-y==>positive,negative,0
+    })
+    console.log(score);
+
+    //map not updates the array 
+    var sq = score.map((n)=>{
+        return n*n
+    })
+    console.log(sq)
+
+    //same thing without return
+    var sq = score.map((n)=>(n*n))
+    console.log(sq)
+
+    console.log('printing using forEach loop')
+    score.forEach((p)=>{
+        console.log(p)
+    })
+}
+
+
++++++++++++++++++++++++++++++++++
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <button onclick ="fun1()">click</button>
+   
+</body>
+</html>
+
+=================================
+
+
+=================================
+#############using literals object creation literals means {}
+let emp = {
+    id:101,
+    name:'rohit',
+    address:'pune',
+    print:function(){
+        console.log(this)
+        console.log('id  '+this.id +'  name '+this.name +'  address  ' +this.address)
+    }
+}
+function fun1() {
+    //this is not object oriented programming because we follo encapsulation
+    //console.log(emp.name)
+    //console.log(emp.id)
+    //console.log(emp.address)
+
+    emp.print()
+}
+
++++++++++++++++++++++++++++++++++
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <button onclick ="fun1()">click</button>
+   
+</body>
+</html>
++++++++++++++++++++++++++++++++++
+
+let emp = new Object()
+let emp1={}//both are similar syntax
+
+emp.id=101
+emp.name='rohit'
+emp.address='pune'
+emp.print=function (){
+    console.log(this.id,this.name,this.address)
+}
+
+function fun1() {
+    emp.print()
+}
+=================================
+
+
+=================================
+let emp = {
+    id:101,
+    name:'rohit',
+    address:'pune',
+    print:function(){
+        console.log('id  '+this.id +'  name '+this.name +'  address  ' +this.address)
+    }
+}
+//not the right way to add the property
+// function fun1() {
+//     emp.print()
+//     emp.email='rohit@gmail.com'
+//     console.log(emp.email)
+// }
+
+function fun1() {
+    emp.print()
+    Object.defineProperty(emp,'email',{value:'rohit@gmail.com',writable:false,configurable:true})
+    Object.defineProperty(emp,'password',{value:'hdgjkgsjifk',writable:true,enumerable:false })
+
+    emp.email='new email id'//still showing old one bcs configurable=true not yet done
+    console.log(emp.email)
+
+    //for in
+    for(p in emp){
+        console.log(p,emp[p])
+    }
+
+    console.log('after delete address')
+    delete emp.address
+    console.log(emp)
+
+    //configurableb true means we can manipulate(like delete operation) the properties 
+    console.log('after delete gmail')
+    delete emp.email
+    console.log(emp)
+
+    //configurableb false means we can't manipulate the properties 
+    console.log('after delete gmail')
+    delete emp.email
+    console.log(emp)
+
+    
+}
++++++++++++++++++++++++++++++++++
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <button onclick ="fun1()">click</button>
+   
+</body>
+</html>
+=================================
+
+
+
+=================================
+
++++++++++++++++++++++++++++++++++
+=================================
+
+
+
+=================================
++++++++++++++++++++++++++++++++++
+=================================
+
+
+
+=================================
++++++++++++++++++++++++++++++++++
+=================================
+
+

@@ -1,0 +1,467 @@
+$txt-color: red;
+$bg-color: grey;
+h1{
+    $txt-color: green !global;
+    // it will override value of global variable...
+    color: $txt-color;
+    background-color: $bg-color;
+}
+h2{
+    color: $txt-color;
+}
+================================
+nav{
+    display: flex;
+    background-color: grey;
+    ul{
+        list-style: none;
+    }
+    li{
+        display: inline-block;
+        padding: 10px 20px;
+    }
+    a{
+        text-decoration: none;
+    }    
+}
+h2{
+    font: {
+        size: 20px;
+        family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        weight: bold;
+    }
+}
+====================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>heading....</h2>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+        </ul>
+    </nav>
+    <ul>
+        <li>item1</li>
+        <li>item1</li>
+        <li>item1</li>
+        <li>item1</li>
+        <li>item1</li>
+    </ul>
+    <a href="#">outside</a>
+</body>
+</html>
+
+
+=================================================
+use of map
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>light</h1>
+    <h2>medium</h2>
+    <h3>dark</h3>
+</body>
+</html>
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+$red-map: (light: #e57373, medium: #f44336, dark: #ff0000);
+h1{
+background-color: map-get($red-map, light);
+}
+h2{
+background-color: map-get($red-map, medium);
+}
+h3{
+background-color: map-get($red-map, dark);
+}
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+list
+
+h2{
+    font-size:nth(10px 12px 14px 16px, 4)
+}
+
+====================================================
+@debug 'h1 this is debug message';
+@debug #f1f1f1aa; //#f1f1f1aa
+@debug midnightblue;//midnightblue
+@debug rgb(255,0,0);//red
+@debug hsl(228,7%,85%); //
+====================================
+$version:1.2.3; //scss
+/*this code is designed in #{$version}*/
+
+
+@mixin paraStyle{
+    background-color: grey;
+    color:white;
+    margin:10px;
+    padding:20px;
+}
+
+div p{
+    @include paraStyle;
+}
++++++++++++++++++++++++++++++++++++++
+//.css
+/*this code is designed in 1.2 0.3*/
+div p {
+  background-color: grey;
+  color: white;
+  margin: 10px;
+  padding: 20px;
+}
+/*# sourceMappingURL=styles.css.map */
++++++++++++++++++++++++++++++++++++++
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+        <p>First h1</p>
+    </div>
+    <div>
+        <p>Second h1</p>
+    </div>
+</body>
+</html>
+======================================
+##############@imports
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+        <h1>Welcome</h1>
+    </div>
+    <h1>Welcome 2</h1>
+</body>
+</html>
+++++++++++++++++++++++++++++++++++++++
+@import 'reset';
+@import 'variables';
+
+h1{
+    color: $clr;
+}
+
++++++++++++++++++++++++++++++++++++++++
+//reset.scss
+html{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: red;
+    font-size: 20px
+}
+===========================================
+######@function
+@function fun1($n){
+    @return $n*$n;
+}
+p{
+    font-size:#{fun1(5)}px;//here we are squring the size of p
+}
+
+@debug 'square of 5 is ' + fun1(5);//printing on console square of 5 is 25
+
+++++++++++++++++++++++++++++++++++++++
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+        <p>Welcome</p>
+    </div>
+    <h1>Welcome 2</h1>
+</body>
+</html>
+++++++++++++++++++++++++++++++++++++++++
+
+p {
+  font-size: 25px;
+}
+/*# sourceMappingURL=styles.css.map */
+========================================
+##############@extend
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="btn1">button1</button>   
+    <button class="btn2">button2</button>   
+    <button class="btn3">button3</button>   
+</body>
+</html>
++++++++++++++++++++++++++++++++++++++++++
+// basic
+.btn1{
+    border: none;
+    padding: 10px 20px;
+}
+// success
+.btn2{
+    @extend .btn1;
+    background-color: green;
+}
+//error 
+.btn3{
+    // get style from btn1 + your own styles
+    //you get style from parent + own style + override existing style from parent    
+    @extend .btn2;//properties of button1+button2
+    border: 1px solid black;
+    background-color: red;//preference is goining to local one  
+}
+=========================================
+##########@debug  and @warn
+
+@debug 'hi this is debug option....';//displayed in console
+
+@warn 'hi this is warnning option.... we can turn off warning if required';
+
+@error 'invalid input ';//higher priority
+
+========================================
+***********control directives
+##########if
+// p{
+//     color: if(1+1==3,green,red)//if true color is green else red
+// }
+##########@if
+p{
+    @if(1+1==2) {color:red}//if true then only color is red 
+}
+=========================================
+
+
+
+
+///for...to --> last value from loop will not get considered
+@each $color in pink, red, violet, yellow, blue{
+    .#{$color}{
+        color: $color;
+    }
+}
+=========================================
+// p{
+//     //if(condition, action when condition is true, action when condition is false)
+//     color: if(1+1 == 3, green, red)
+// }
+p{
+    @if(1+1==5) {
+        color: red;
+        background-color: grey;
+    }@else{
+        color: green;
+        background-color: lightblue;
+    }
+    
+}
+
+
+
+========================================
+// p{
+//     color: if(1+1==3,green,red)
+// }
+// p{
+//     @if(1+1==5) {
+//         color:red;
+//         background-color: grey;
+//     }@else if(1+1=3){
+//         color:white;
+//         background-color: green;
+//     }
+//     @else{
+//         color: black;
+//     }
+// }
+
+
+//for through considers last element
+// @for $i from 1 through 5{
+//     .p#{$i}{
+//         padding-left: 10px + $i *10
+//     };
+    
+// }
+
+//for to not considers last element
+// @for $i from 1 to 5{
+//     .p#{$i}{
+//         padding-left: 10px + $i
+//     };
+    
+// }
+
+
+
+@each $color in pink, red, violet, yellow, blue{
+    .#{$color}{
+        color: $color;
+    }
+}
+
++++++++++++++++++++++++++++++++++++++
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- <p class="p1">skfhfx</p>
+    <p class="p2">skfhfx</p>
+    <p class="p3">skfhfx</p>
+    <p class="p4">skfhfx</p>
+    <p class="p5">skfhfx</p> -->
+
+    <p class="yellow">skfhfx</p>
+    <p class="red">skfhfx</p>
+    <p class="violet">skfhfx</p>
+    <p class="pink">skfhfx</p>
+    <p class="blue">skfhfx</p>
+
+</body>
+</html>
+===========================================
+
+10/07/20
+===========================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <p class="red">skfhfx</p>
+    <p class="green">skfhfx</p>
+    <p class="red">skfhfx</p>
+    <p class="green">skfhfx</p>
+    <p class="red">skfhfx</p>
+    <p class="green">skfhfx</p>
+
+
+</body>
+</html>
++++++++++++++++++++++++++++++++++++++++++++
+@each $color,$border in(aqua,dotted),(red,solid),(green,double){
+    .#{$color}{
+        background-color: $color;
+        border:$border;
+    }
+}
+===========================================
+
+
+
+===========================================
+
++++++++++++++++++++++++++++++++++++++++++++
+
+===========================================
+
+
+
+
+
+===========================================
+
++++++++++++++++++++++++++++++++++++++++++++
+
+===========================================
+
+
+
+
+
+
+
+
+
+===========================================
+
++++++++++++++++++++++++++++++++++++++++++++
+
+===========================================
+
+
+
+
+
+===========================================
+
++++++++++++++++++++++++++++++++++++++++++++
+
+===========================================
+
+
+
+
+
+===========================================
+
++++++++++++++++++++++++++++++++++++++++++++
+
+===========================================
+
+
+
+
+
+
+===========================================
+
++++++++++++++++++++++++++++++++++++++++++++
+
+===========================================

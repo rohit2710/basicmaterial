@@ -1,0 +1,9 @@
+sonar.projectVersion=1.1
+sonar.projectKey=
+sonar.projectName=
+sonar.sources=.
+sonar.java.binaries=./target
+sonar.host.url=http://172.27.12.78/
+==========
+\\ct-share\UtilitiesForAll\Sonar-qube
+=========

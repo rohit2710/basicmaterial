@@ -1,0 +1,840 @@
+[10:35 AM] Dadaram Manohar Jadhav (Guest)
+    
+
+<!DOCTYPEhtml>
+<htmllang="en">
+ 
+<head>
+<metacharset="UTF-8">
+<metaname="viewport"content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+ 
+<body>
+<headerclass="top-header">
+<imgsrc="logo.jpeg"class="logo"alt="company logo">
+<navclass="nav-bar">
+<ahref="index.html">Home</a>
+<ahref="product.html">Product</a>
+<ahref="product.html">Product</a>
+<ahref="register.html">Registration</a>
+<ahref="video.html">Video</a>
+<ahref="image.html">Image</a>
+<ahref="table.html">Table</a>
+</nav>
+<imgsrc="menu.jpeg"alt="menu"class="menu">
+</header>
+<sectionclass="main">
+<asideclass="quick-links">
+<ul>
+<li>Link1</li>
+<li>Link1</li>
+<li>Link1</li>
+<li>Link1</li>
+<li>Link1</li>
+</ul>
+</aside>
+<articleclass="main-article">
+<p>
+
+</p>
+</article>
+</section>
+<!-- footer -->
+<footerclass="main-footer">
+<div>
+<ul>
+<li>Locations</li>
+<li>PUne</li>
+<li>Hyderabad</li>
+<li>GNR</li>
+</ul>
+</div>
+<div>
+<ul>
+<li>Domain</li>
+<li>Media</li>
+<li>e-commerce</li>
+<li>travel</li>
+</ul>
+</div>
+<div>
+<ul>
+<li>Services</li>
+<li>Software development</li>
+<li>Technical support</li>
+<li>Outsourcing</li>
+</ul>
+</div>
+</footer>
+</body>
+ 
+</html>
+===================
+<header class="top-header">
+        <img src="logo.jpeg" class="logo" alt="company logo">
+        <nav class="nav-bar" id="nav-bar"  >
+            <a href="index.html">Home</a>
+            <a href="product.html">Product</a>
+            <a href="product.html">Product</a>
+            <a href="register.html">Registration</a>
+            <a href="video.html">Video</a>
+            <a href="image.html">Image</a>
+            <a href="table.html">Table</a>
+        </nav>
+        <img src="menu.jpeg" alt="menu" class="menu" onclick="showhidemenu()">
+    </header>
+======================
+
+function showhidemenu(){
+    let mn = document.querySelector('#nav-bar')
+    if(mn.style.display==='flex'){
+        mn.style.display = 'none'
+    }else{
+        mn.style.display = 'flex'
+    }
+}
+========================
+/* desktop first... */
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+    font-size: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.top-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid grey;
+}
+.logo{
+    width: 5%;
+    height: auto;
+}
+.nav-bar{
+    flex: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 50px;    
+}
+.nav-bar a{
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: darkgreen;
+    cursor: pointer;
+    padding: 15px 20px;
+    font-weight: bold;    
+}
+.menu{
+    position: fixed;
+    right: 0;
+}
+=====================================
+/* desktop first... */
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+    font-size: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.top-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid grey;
+}
+.logo{
+    width: 5%;
+    height: auto;
+}
+.nav-bar{
+    flex: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 50px;     
+}
+.nav-bar a{
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: darkgreen;
+    cursor: pointer;
+    padding: 15px 20px;
+    font-weight: bold;    
+}
+.menu{
+    position: fixed;
+    right: 0;
+}
+.main{
+    /* 100%for all items within main section */
+    display: flex;
+    font-size: 1.6rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.quick-links{
+    /* 10% will be allocated to quick links */
+    flex: 10%;
+    margin-top: 10px;
+    background-color: lightgrey;    
+}
+.main-article{
+    /* 90% will be allocated to main article */
+    flex: 90%;
+    margin-top: 10px;
+}
+.main-article p{
+    column-count: 5;
+    margin: 20px;
+}
+.main-footer{
+    font-size: 1.6rem;
+    display: flex;
+    width: 100%;
+    background-color: lightskyblue;
+    color: white;
+    /* position: fixed;
+    bottom: 0; */
+}
+.main-footer div{
+    flex: 33.33%;
+    text-align: center;
+}
+.main-footer ul{
+    list-style-type: none;
+}
+.main-footer li:first-child{
+    font-weight: bold;
+    border-bottom: 1px solid white;
+}
+==============================
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dummy e-commerce application</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+ 
+<body>
+    <!-- top header (main header) -->
+    <header class="top-header">
+        <img src="logo.jpeg" class="logo" alt="company logo">
+        <nav class="nav-bar" id="nav-bar"  >
+            <a href="index.html">Home</a>
+            <a href="product.html">Product</a>
+            <a href="product.html">Product</a>
+            <a href="register.html">Registration</a>
+            <a href="video.html">Video</a>
+            <a href="image.html">Image</a>
+            <a href="table.html">Table</a>
+        </nav>
+        <img src="menu.jpeg" alt="menu" class="menu" onclick="showhidemenu()">
+    </header>
+    <!-- main section... -->
+    <section class="main">
+        <aside class="quick-links">
+            <ul>
+                <li>Link1</li>
+                <li>Link1</li>
+                <li>Link1</li>
+                <li>Link1</li>
+                <li>Link1</li>
+            </ul>
+        </aside>
+        <article class="main-article">
+             
+        </article>
+    </section>
+    <!-- footer -->
+    <footer class="main-footer">
+        <div>
+            <ul>
+                <li>Locations</li>
+                <li>PUne</li>
+                <li>Hyderabad</li>
+                <li>GNR</li>
+            </ul>            
+        </div>
+        <div>
+            <ul>
+                <li>Domain</li>
+                <li>Media</li>
+                <li>e-commerce</li>
+                <li>travel</li>
+            </ul>            
+        </div>
+        <div>
+            <ul>
+                <li>Services</li>
+                <li>Software development</li>
+                <li>Technical support</li>
+                <li>Outsourcing</li>
+            </ul>            
+        </div>                
+    </footer>
+</body>
+ 
+</html>
+======================================
+/* desktop first... */
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+    font-size: 11px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* top header */
+.top-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid grey;
+}
+.logo{
+    width: 5%;
+    height: auto;
+}
+/* nav bar */
+.nav-bar{
+    flex: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 50px;     
+}
+.nav-bar a{
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: darkgreen;
+    cursor: pointer;
+    padding: 15px 20px;
+    font-weight: bold;    
+}
+/* toggle menu image */
+.menu{
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+/* main section of page */
+.main{
+    /* 100%for all items within main section */
+    display: flex;
+    font-size: 1.6rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+/* left side quick links */
+.quick-links{
+    /* 10% will be allocated to quick links */
+    flex: 10%;
+    margin-top: 10px;
+    background-color: lightgrey;    
+}
+/* main contents */
+.main-article{
+    /* 90% will be allocated to main article */
+    flex: 90%;
+    margin-top: 10px;
+}
+.main-article p{
+    column-count: 5;
+    margin: 20px;
+    line-height: 35px;
+    word-spacing: 10px;
+}
+/* main footer of the page  */
+.main-footer{
+    font-size: 1.6rem;
+    display: flex;
+    width: 100%;
+    background-color: lightskyblue;
+    color: white;
+    /* position: fixed;
+    bottom: 0; */
+}
+.main-footer div{
+    flex: 33.33%;
+    text-align: center;
+}
+.main-footer ul{
+    list-style-type: none;
+}
+.main-footer li:first-child{
+    font-weight: bold;
+    border-bottom: 1px solid white;
+}
+ 
+/* mobile devices */
+@media only screen and (min-width: 0px) and (max-width:500px){
+        /* desktop first... */
+    html{           
+        font-size: 9px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+    /* top header */
+    .top-header{
+        flex-direction: column;
+        align-items: center;        
+    }
+    .logo{
+        width: 15%;
+    }
+    /* nav bar */
+    .nav-bar{
+        flex-direction: column;
+        justify-content: center;
+    }
+ 
+    .quick-links{
+        display: none;
+    }
+   
+    .main-article p{
+        column-count: 1;
+    }
+    /* main footer of the page  */
+    .main-footer{
+        flex-direction: column;
+    }
+}
+ 
+/* tab devices */
+@media only screen and (min-width: 501px) and (max-width:700px){
+    html{           
+        font-size: 10px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    }
+    .logo{
+        width: 15%;
+    }
+    .menu {
+        display: none;
+    }
+    .quick-links{
+        display: none;
+    }
+    .main-article p{
+        column-count: 2;        
+    }
+}
+========================================
+/* main section of page */
+.main{
+    /* 100%for all items within main section */
+    display: flex;
+    font-size: 1.6rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+/* left side quick links */
+.quick-links{
+    /* 10% will be allocated to quick links */
+    flex: 10%;
+    margin-top: 10px;
+    background-color: lightgrey;    
+}
+/* main contents */
+.main-article{
+    /* 90% will be allocated to main article */
+    flex: 90%;
+    margin-top: 10px;
+}
+.main-article p{
+    column-count: 5;
+    margin: 20px;
+    line-height: 35px;
+    word-spacing: 10px;
+}
+.reg-form{
+    flex: 90%;
+    margin-top: 10px;    
+    height: 79vh;
+}
+.reg-form form{
+    margin: 75px;    
+}
+input[type=text]{
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-bottom: 1px solid red;
+    margin: 10px;
+}
+input[type=submit]{
+    background-color: green;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1.5rem;
+    float: right;
+    cursor: pointer;
+    border-radius: 5px;
+}
+/* main footer of the page  */
+.main-footer{
+    font-size: 1.6rem;
+    display: flex;
+    width: 100%;
+    background-color: lightskyblue;
+    color: white;
+    /* position: fixed;
+    bottom: 0; */
+}
+.main-footer div{
+    flex: 33.33%;
+    text-align: center;
+}
+.main-footer ul{
+    list-style-type: none;
+}
+.main-footer li:first-child{
+    font-weight: bold;
+    border-bottom: 1px solid white;
+}
+ 
+/* mobile devices */
+@media only screen and (min-width: 0px) and (max-width:500px){
+        /* desktop first... */
+    html{           
+        font-size: 9px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+    /* top header */
+    .top-header{
+        flex-direction: column;
+        align-items: center;        
+    }
+    .logo{
+        width: 15%;
+    }
+    /* nav bar */
+    .nav-bar{
+        flex-direction: column;
+        justify-content: center;
+    }
+ 
+    .quick-links{
+        display: none;
+    }
+   
+    .main-article p{
+        column-count: 1;
+    }
+ 
+    .reg-form{   
+        height: 75vh;
+    }
+    .reg-form form{
+        margin: 10px;    
+        margin-top: 50px;
+    }
+    input[type=text]{
+        box-sizing: border-box;
+        margin: 10px;
+    }
+    input[type=submit]{        
+        width: 100%;
+    }
+ 
+    /* main footer of the page  */
+    .main-footer{
+        flex-direction: column;
+    }
+}
+ 
+/* tab devices */
+@media only screen and (min-width: 501px) and (max-width:700px){
+    html{           
+        font-size: 10px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    }
+    .logo{
+        width: 15%;
+    }
+    .menu {
+        display: none;
+    }
+    .quick-links{
+        display: none;
+    }
+    .main-article p{
+        column-count: 2;        
+    }
+}
+======================================
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dummy e-commerce application</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+ 
+<body>
+    <!-- top header (main header) -->
+    <header class="top-header">
+        <img src="logo.jpeg" class="logo" alt="company logo">
+        <nav class="nav-bar" id="nav-bar"  >
+            <a href="index.html">Home</a>
+            <a href="product.html">Product</a>
+            <a href="product.html">Product</a>
+            <a href="register.html">Registration</a>
+            <a href="video.html">Video</a>
+ 
+        </nav>
+        <img src="menu.jpeg" alt="menu" class="menu" onclick="showhidemenu()">
+    </header>
+    <!-- main section... -->
+    <section class="main">
+        <aside class="quick-links">
+            <ul>
+                <li>Link1</li>
+                <li>Link1</li>
+                <li>Link1</li>
+                <li>Link1</li>
+                <li>Link1</li>
+            </ul>
+        </aside>
+        <article class="reg-form">
+            <form action="#">
+                <label for="firstname">FirstName</label>
+                <input type="text" name="fn">
+ 
+                <label for="lastname">Lastname</label>
+                <input type="text" name="ln">
+ 
+                <input type="submit" value="register">
+            </form>
+        </article>
+    </section>
+    <!-- footer -->
+    <footer class="main-footer">
+        <div>
+            <ul>
+                <li>Locations</li>
+                <li>PUne</li>
+                <li>Hyderabad</li>
+                <li>GNR</li>
+            </ul>            
+        </div>
+        <div>
+            <ul>
+                <li>Domain</li>
+                <li>Media</li>
+                <li>e-commerce</li>
+                <li>travel</li>
+            </ul>            
+        </div>
+        <div>
+            <ul>
+                <li>Services</li>
+                <li>Software development</li>
+                <li>Technical support</li>
+                <li>Outsourcing</li>
+            </ul>            
+        </div>                
+    </footer>
+</body>
+ 
+</html>
+======================================
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dummy e-commerce application</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+ 
+<body>
+    <!-- top header (main header) -->
+    <header class="top-header">
+        <img src="logo.jpeg" class="logo" alt="company logo">
+        <nav class="nav-bar" id="nav-bar"  >
+            <a href="index.html">Home</a>
+            <a href="product.html">Product</a>
+            <a href="product.html">Product</a>
+            <a href="register.html">Registration</a>
+            <a href="video.html">Video</a>
+ 
+        </nav>
+        <img src="menu.jpeg" alt="menu" class="menu" onclick="showhidemenu()">
+    </header>
+    <!-- main section... -->
+    <section class="main">
+        <aside class="quick-links">
+            <ul>
+                <li>Link1</li>
+                <li>Link1</li>
+                <li>Link1</li>
+                <li>Link1</li>
+                <li>Link1</li>
+            </ul>
+        </aside>
+        <article class="video-contents">
+            <video src="movie.mp4" controls></video>
+        </article>
+    </section>
+    <!-- footer -->
+    <footer class="main-footer">
+        <div>
+            <ul>
+                <li>Locations</li>
+                <li>PUne</li>
+                <li>Hyderabad</li>
+                <li>GNR</li>
+            </ul>            
+        </div>
+        <div>
+            <ul>
+                <li>Domain</li>
+                <li>Media</li>
+                <li>e-commerce</li>
+                <li>travel</li>
+            </ul>            
+        </div>
+        <div>
+            <ul>
+                <li>Services</li>
+                <li>Software development</li>
+                <li>Technical support</li>
+                <li>Outsourcing</li>
+            </ul>            
+        </div>                
+    </footer>
+</body>
+ 
+</html>
+=========================================
+.video-contents{
+    flex: 90%; 
+    height: 78vh;   
+}
+.video-contents video{
+    margin: 10px;
+    max-width: 100%;
+    height: auto;
+}
+=========================================
+.product-container{
+    flex:90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+.product{
+    box-shadow: 0 4px 8px 0 grey;
+    /* border: 1px solid grey; */
+    margin: 20px;
+}
+.product img{
+    width: 70%;
+}
+.product button{
+    width: 100%;
+    border: none;
+    background-color: darkslategrey;
+    color: white;
+    padding: 10px 10px;
+    cursor: pointer;
+}
+================================
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dummy e-commerce application</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+ 
+<body>
+    <!-- top header (main header) -->
+    <header class="top-header">
+        <img src="logo.jpeg" class="logo" alt="company logo">
+        <nav class="nav-bar" id="nav-bar"  >
+            <a href="index.html">Home</a>
+            <a href="product.html">Product</a>
+            <a href="product.html">Product</a>
+            <a href="register.html">Registration</a>
+            <a href="video.html">Video</a>
+ 
+        </nav>
+        <img src="menu.jpeg" alt="menu" class="menu" onclick="showhidemenu()">
+    </header>
+    <!-- main section... -->
+    <section class="main">
+        <aside class="quick-links">
+            <ul>
+                <li>Link1</li>
+                <li>Link1</li>
+                <li>Link1</li>
+                <li>Link1</li>
+                <li>Link1</li>
+            </ul>
+        </aside>
+        <article class="product-container">
+           
+            <div class="product">
+                <img src="logo.jpeg" alt="">
+                <h2>Computer</h2>
+                <p>$50</p>
+                <p>This is latest computer...</p>
+                <button>Add to cart</button>
+            </div>
+        
+  
+ 
+        </article>
+    </section>
+    <!-- footer -->
+    <footer class="main-footer">
+        <div>
+            <ul>
+                <li>Locations</li>
+                <li>PUne</li>
+                <li>Hyderabad</li>
+                <li>GNR</li>
+            </ul>            
+        </div>
+        <div>
+            <ul>
+                <li>Domain</li>
+                <li>Media</li>
+                <li>e-commerce</li>
+                <li>travel</li>
+            </ul>            
+        </div>
+        <div>
+            <ul>
+                <li>Services</li>
+                <li>Software development</li>
+                <li>Technical support</li>
+                <li>Outsourcing</li>
+            </ul>            
+        </div>                
+    </footer>
+</body>
+ 
+</html>
+====================================

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Html Css Js Evaluation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="combine-header">
+            <header class="top-header">
+                    <img src="https://media-exp1.licdn.com/dms/image/C511BAQFff6diNO78Vw/company-background_10000/0?e=2159024400&v=beta&t=3K681sujdTj0xfcfhrgQJM0Rg9DqZ6XrjLkvfVfjIVc" alt="ecart logo" width="150px" height="100px">
+                    <nav id="top-nav">
+                            <a href="home.html">Home</a> 
+                            <a href="registration.html">Registration</a> 
+                    </nav>
+            </header>
+            
+               
+    </div>
+    
+      <br><br><br>
+
+    <pre>
+            <form class="form">
+                firstname:       <input type="text" onkeypress="validateFName()" id="fname" name="fname" placeholder="enter your first name" minlength="5">                <hr>
+                <br>
+                lastname:        <input type="text" name="lname" placeholder="enter your last name" minlength="5">
+                <hr>
+                <br>
+               <div class="slt-country">
+                <label for="country">              Country:            </label>
+                <select name="country" id="country">
+                    <option>Select</option>
+                    <option value="usa">United States</option>
+                    <option value="india">India</option>
+                    <option value="china">China</option>
+                    <option value="uk">United Kingdom</option>
+                </select>
+            </div>
+                <hr>
+                Remark:    <textarea rows="4" cols="25" border:"none"></textarea>
+                <hr>
+                <br>
+                <button id="button">Register</button>
+        </form>
+    </pre>
+       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="footer">
+            <div class="div-footer">
+                <ul class="list">
+                    <h2>Catogory</h2>
+                    <hr>
+                    <li>Mobile</li>
+                    <li>Computer</li>
+                    <li>Grosery</li>
+                    <li>Clothing</li>
+                </ul>
+                <ul class="list">
+                    <h2>Location</h2>
+                    <hr>
+                    <li>India</li>
+                    <li>Usa</li>
+                    <li>China</li>
+                    <li>UK</li>
+                </ul>
+                <ul class="list">
+                    <h2>Contact</h2>
+                    <hr>
+                    <li>India</li>
+                    <li>Usa</li>
+                    <li>China</li>
+                    <li>UK</li>
+                </ul>
+            </div>
+        </footer>
+</body>
+</html>
+
+
+============================================================================
+/*styles for all page*/
+*{
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.combine-header{
+    display: flex;
+}
+/*styles on img*/
+.top-header>img{
+    width: 50%;
+    padding: 0px;
+    margin-top: 0px;
+    border-radius: 50%
+}
+/*styles for header*/
+.top-header{
+    display: flex;
+}
+/*styles for nav*/
+#top-nav{
+    display: flex ;
+    flex-direction: row;
+    float: right;
+    padding: 20px;
+    width: 50%;
+
+}
+/*styles for anchor tags of navbar*/
+#top-nav>a{
+    color: blue;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: right;
+    font-weight: bold;
+}
+/*on hover on nav bar thid are the changes*/
+#top-nav>a:hover{
+    background-color: aqua;
+    color: black;
+    transform: scale(1.2,1.2);
+}
+/*styles for lines*/
+hr{
+    background-color: red;
+    block-size: 4px;
+    margin-left: 0%
+}
+/*styles for form*/
+.form{
+    float: right;
+}
+/*styles for country checkbox*/
+.slt-country{
+    display: flex;
+}
+/*to remove input border*/
+.no-outline:focus {
+    outline: none;
+}
+/*styles for footer button*/
+#button{
+    float: right;
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+}
+.div-footer{
+    margin: 0 0 0 0;
+    display: flex;
+    padding: 50px 10px 0 50px;
+    background-color: grey;
+    width: 100%;
+    height: auto;
+}
+/*styles for list*/
+.list{
+    width: 33%;
+}
+======================================================

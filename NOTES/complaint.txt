@@ -1,0 +1,147 @@
+1. registerComplaint
+2. getAllComplaints
+3. getComplaintById
+
+
+
+
+@Service
+public class UserService {
+    public User findUserByName(String username) {
+       User user = userRepository.findByUsernName(username);
+       if(null == user) {
+          throw new ResponseStatusException(HttpStatus.NOT_FOUND, "user not found");
+       }
+    }
+}
+Case 2: Or do we need to use custom exception and handle it in controller level ? We are catching the CustomException and throwing ResponseStatusException in this case, why do we have to catch the custom exception again instead of going with Case 1
+
+@Service
+public class UserService {
+    public User findUserByName(String username) {
+       User user = userRepository.findByUsernName(username);
+       if(null == user) {
+          throw new UserNotFoundException("user not found");
+       }
+    }
+}
+
+@RestController
+public class UserController {
+
+    @GetMapping(path="/get-user")
+    public ResponseEntity<User> getUser(String username) {
+      try {
+         userService.findUserByName(username);
+      } catch (UserNotFoundException ex) {
+         throw new ResponseStatusException(HttpStatus.NOT_FOUND, "user not found");
+      }
+    }
+}
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+    <Properties>
+        <Property name="layout">%d [%t] %-5level %logger{36} - %m%n</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="ConsoleAppender" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </Console>
+
+        <!-- Rolling File Appender -->
+        <RollingFile name="FileAppender" fileName="d:\mylog.log"
+                     filePattern="app.%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <Pattern>${LOG_PATTERN}</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="5 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+        
+    </Appenders>
+
+    <Loggers>
+    <Logger name="com.grievance" additivity="false" level="info">
+		<AppenderRef ref="FileAppender"/>
+	</Logger>
+	<!--  
+        <AsyncLogger name="com.example.log4j2demo" level="debug"
+                     additivity="false">
+            <AppenderRef ref="ConsoleAppender" />
+            <AppenderRef ref="FileAppender" />
+        </AsyncLogger>
+-->
+        <Root level="info">
+            <AppenderRef ref="ConsoleAppender" />
+            <AppenderRef ref="FileAppender" />
+        </Root>
+    </Loggers>
+</Configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="info">
+	<!-- layout -->
+	<Properties>
+		<Property name="layout">%d [%t] %-5level %logger{36} - %m%n</Property>
+	</Properties>
+	<!-- appenders ==> mention destination -->
+	<Appenders>
+		<Console name="Console">
+			<PatternLayout pattern="${layout}" />
+		</Console>
+		<RollingFile name="MyFile"
+			filePattern="app.%d{yyyy-MM-dd}-%i.log" fileName="./mylog.log">
+			<PatternLayout pattern="${layout}" />
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="5 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20" />
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Logger name="com.grievance" additivity="false" level="info">
+			<AppenderRef ref="MyFile" />
+		</Logger>
+
+
+		<Root level="info">
+
+			<AppenderRef ref="Console" />
+
+		</Root>
+
+	</Loggers>
+
+</Configuration>
